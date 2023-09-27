@@ -1,0 +1,165 @@
+---
+title: "Plot independent variables"
+output:
+  pdf_document: default
+---
+
+```{r}
+options(digits = 3, warn = -1, max.print=50)
+setwd(".")
+
+library(plyr)
+library(dplyr)
+library(ggplot2)
+library(extrafont)
+require(reshape2)
+library(nortest)
+library(effsize)
+library(splitstackshape)
+library(car)
+library(rstatix)
+library(tidyverse)
+library(ggpubr)
+library(ez)
+library(bestNormalize)
+library(zoo)
+
+loadfonts()
+fontSize = 10
+```
+
+### Read data
+
+```{r}
+main_dir = "../data_experiment"
+
+path_frequency = c('/F_HIGH', 'F_MEDIUM', '/F_LOW')
+path_workload = c('/W_HIGH', 'W_MEDIUM', '/W_LOW')
+path_tool = c('/baseline', '/elastic', '/netdata', '/prometheus', '/zipkin')
+
+get_all_runs <- function(path) {
+  run_list <- list()
+  
+  for (i in 1:rep_count) {
+    file_path = paste(main_dir, path,  '/t', i, '/data.csv', sep="")
+    run <- read.csv(file_path, header = FALSE)
+    run_list[[i]] <- run
+  }
+  
+  return(run_list)
+}
+
+get_run <- function(path, run_no) {
+  file_path = paste(main_dir, path,  '/t', run_no, '/data.csv', sep="")
+  return(read.csv(file_path, header = FALSE))
+}
+
+
+get_min_duration_among_tools <- function(run_for_tools) {
+  min <- length(run_for_tools[[1]][[1]])
+  
+  for (i in 1:length(run_for_tools)) {
+    if (length(run_for_tools[[i]][[1]]) < min) {
+      min <- length(run_for_tools[[i]][[1]])
+    }
+  }
+  
+  return(min)
+}
+
+slice_runs <- function(df_runs_for_tool, cutting_point) {
+  return(df_runs_for_tool %>% slice(1:cutting_point))
+}
+
+```
+
+### Plot data
+
+Plot an example of run for each combination of factors and every dependent variable.
+
+```{r}
+plot_timeseries = function(block, dep_var_enum, title, scale_x, run_no) {
+  df_runs_all_tools %>%
+    ggplot(aes(x=V1, y=df_runs_all_tools[[dep_var_enum[[1]]]], color=tool)) + 
+    #geom_hex(bins=scale_x) +
+    geom_line() +
+    ylim(global_min, global_max) +
+    xlim(0, scale_x) +
+    ggtitle(title) +
+    theme_bw() + xlab("Time (seconds)") + ylab(dep_var_enum[[3]]) +
+    scale_x_continuous(breaks=seq(0, scale_x, 60)) +
+    scale_color_manual(values=c("#F7374B", "#0B7649")) +
+    theme(legend.position="none", plot.title=element_text(size=fontSize), axis.text.x=element_text(size=fontSize, angle = 45, hjust = 1), axis.text.y=element_text(size=fontSize), axis.title=element_text(size=fontSize))
+  
+  ggsave(paste("output/r", run_no, "/", dep_var_enum[[2]],"_", block, ".png", sep=""), scale = .9, height = 4, width = 10, unit = "cm")
+}
+
+```
+
+Plot each block.
+
+```{r}
+
+fontSize = 8
+rep_count <- 10
+metricsEnum <- function() {
+    list(ENERGY = c("V25", "energy", "Energy (W)"), CPU = c("V5", "cpu", "CPU usage %"), MEMORY = c("V9", "memory", "Memory usage %"), NETWORK = c("V6", "network", "Total in/out datagrams"), LOAD = c("V11", "load", "CPU load avg"))
+}
+
+blocks <- c("F_HIGH_W_HIGH", "F_HIGH_W_MEDIUM", "F_HIGH_W_LOW", "F_MEDIUM_W_HIGH", "F_MEDIUM_W_MEDIUM", "F_MEDIUM_W_LOW", "F_LOW_W_HIGH", "F_LOW_W_MEDIUM", "F_LOW_W_LOW")
+blocks_path <- c("/F_HIGH/W_HIGH", "/F_HIGH/W_MEDIUM", "/F_HIGH/W_LOW", "/F_MEDIUM/W_HIGH", "/F_MEDIUM/W_MEDIUM", "/F_MEDIUM/W_LOW", "/F_LOW/W_HIGH", "/F_LOW/W_MEDIUM", "/F_LOW/W_LOW")
+titles <- c("a) High frequency, high workload", "a) High frequency, medium workload", "a) High frequency, low workload", "a) Medium frequency, high workload", "a) Medium frequency, medium workload", "a) Medium frequency, low workload", "a) Low frequency, high workload", "a) Low frequency, medium workload", "a) Low frequency, low workload")
+
+dir.create(file.path("output"), showWarnings = FALSE)
+
+for(run_no in 1:10) {
+  dir.create(file.path("output", paste("r", run_no, sep="")))
+  for(i in 1:length(blocks)) {
+    path <- blocks_path[[i]]
+    block_name <- blocks[[i]]
+    
+    #run_no = sample(seq(1, rep_count), 1)
+    
+    df_baseline = get_run(paste(path, '/baseline', sep=""), run_no)
+    df_baseline$combination = factor(block_name)
+    df_baseline$tool = factor("baseline")
+    
+    df_elastic = get_run(paste(path, '/elastic', sep=""), run_no)
+    df_elastic$combination = factor(block_name)
+    df_elastic$tool = factor("elastic")
+    
+    df_netdata = get_run(paste(path, '/netdata', sep=""), run_no)
+    df_netdata$combination = factor(block_name)
+    df_netdata$tool = factor("netdata")
+    
+    df_prometheus = get_run(paste(path, '/prometheus', sep=""), run_no)
+    df_prometheus$combination = factor(block_name)
+    df_prometheus$tool = factor("prometheus")
+    
+    df_zipkin = get_run(paste(path, '/zipkin', sep=""), run_no)
+    df_zipkin$combination = factor(block_name)
+    df_zipkin$tool = factor("zipkin")
+    
+    runs_for_tools <- list(df_baseline, df_elastic, df_netdata, df_prometheus, df_zipkin)
+    
+    # We consider the same time frame for all tests
+    cutting_point <- get_min_duration_among_tools(runs_for_tools)
+  
+    df_baseline <- slice_runs(df_baseline, cutting_point)
+    df_elastic <- slice_runs(df_elastic, cutting_point)
+    df_netdata <- slice_runs(df_netdata, cutting_point)
+    df_prometheus <- slice_runs(df_prometheus, cutting_point)
+    df_zipkin <- slice_runs(df_zipkin, cutting_point)
+    
+    df_runs_all_tools <- rbind(df_baseline, df_elastic)
+    
+    for(j in 1:length(metricsEnum())) {
+        dep_var_enum <- metricsEnum()[[j]]
+        global_min = min(df_runs_all_tools[[dep_var_enum[[1]]]])
+        global_max = max(df_runs_all_tools[[dep_var_enum[[1]]]])
+
+        plot_timeseries(blocks[[i]], metricsEnum()[[j]], titles[[i]], cutting_point, run_no)
+    }
+  }
+}
+```

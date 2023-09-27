@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ts-security-service
+  data:
+    mongodb:
+      host: ts-security-mongo
+#      username: user
+#      password: ${MONGODB_PASSWORD}
+      database: ts
+      port: 27017
+
+# HTTP Server
+server:
+  port: 11188  # HTTP (Tomcat) port
+
+swagger:
+  controllerPackage: security.controller
+
+logging:
+  file: logs/ts-security-service.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    fdse.microservice: DEBUG

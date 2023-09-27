@@ -1,0 +1,18 @@
+server:
+  port: 16113
+
+spring:
+  application:
+    name: ts-admin-route-service
+
+swagger:
+  controllerPackage: adminroute.controller
+
+logging:
+  file: logs/ts-admin-route-service.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    fdse.microservice: DEBUG

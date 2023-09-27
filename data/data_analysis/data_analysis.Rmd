@@ -1,0 +1,311 @@
+---
+title: "Data Analysis"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r}
+options(digits = 3, warn = -1, max.print=50)
+setwd(".")
+
+library(plyr)
+library(dplyr)
+library(ggplot2)
+library(extrafont)
+require(reshape2)
+library(nortest)
+library(effsize)
+library(splitstackshape)
+library(car)
+library(rstatix)
+library(tidyverse)
+library(ggpubr)
+library(ez)
+
+loadfonts()
+fontSize = 10
+```
+
+### Read data
+
+This sample contains the aggregated energy and performance measurements of 10 observations.
+
+**Independent variables:**
+
+1.  monitoring tool
+
+2.  frequency
+
+3.  workload
+
+**Dependent variables:**
+
+1.  energy efficiency (J)
+
+2.  mean CPU usage percentage
+
+3.  mean memory usage percentage
+
+4.  total number of delivered and received datagrams
+
+5.  duration
+
+```{r}
+data = read.csv("../data_experiment_5/data.csv")
+
+data$frequency = as.factor(data$frequency)
+data$workload = as.factor(data$workload)
+data$tool = as.factor(data$tool)
+
+data = rename(data, energy = energy_consumption)
+data = rename(data, cpu = cpu_usage_percentage)
+data = rename(data, memory = memory_usage_percentage)
+data = rename(data, network = total_datagrams_count)
+data = rename(data, load = load_avg)
+
+data$run_number = as.factor(data$run_number)
+
+
+data$tool <- factor(data$tool, levels = c("baseline", "elastic", "netdata", "prometheus", "zipkin"))
+
+data$frequency = revalue(data$frequency, c("F_HIGH"="F_HIGH", "F_MEDIUM"="F_MEDIUM", "F_LOW"="F_LOW"))
+data$frequency <- factor(data$frequency, levels = c("F_HIGH", "F_MEDIUM", "F_LOW"))
+
+data$workload = revalue(data$workload, c("W_HIGH"="W_HIGH", "W_MEDIUM"="W_MEDIUM", "W_LOW"="W_LOW"))
+data$workload <- factor(data$workload, levels = c("W_HIGH", "W_MEDIUM", "W_LOW"))
+
+data$trial_id = factor(paste(data$tool, data$frequency, data$workload, sep="_"))
+```
+
+## Data exploration
+
+Summarize data for the table.
+
+```{r}
+data %>% group_by(tool) %>% 
+  summarise(min=min(energy), max=max(energy), median=median(energy), mean=mean(energy), sd=sd(energy)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% 
+  summarise(min=min(energy), max=max(energy), median=median(energy), mean=mean(energy), sd=sd(energy)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% group_by(tool) %>% 
+  summarise(min=min(duration), max=max(duration), median=median(duration), mean=mean(duration), sd=sd(duration)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% 
+  summarise(min=min(duration), max=max(duration), median=median(duration), mean=mean(duration), sd=sd(duration)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% group_by(tool) %>% 
+  summarise(min=min(cpu), max=max(cpu), median=median(cpu), mean=mean(cpu), sd=sd(cpu)) %>%
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% 
+  summarise(min=min(cpu), max=max(cpu), median=median(cpu), mean=mean(cpu), sd=sd(cpu)) %>%
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% group_by(tool) %>%
+summarise(min=min(load), max=max(load), median=median(load), mean=mean(load), sd=sd(load)) %>%
+mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>%
+summarise(min=min(load), max=max(load), median=median(load), mean=mean(load), sd=sd(load)) %>%
+mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% group_by(tool) %>% 
+  summarise(min=min(memory), max=max(memory), median=median(memory), mean=mean(memory), sd=sd(memory)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% 
+  summarise(min=min(memory), max=max(memory), median=median(memory), mean=mean(memory), sd=sd(memory)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% group_by(tool) %>% 
+  summarise(min=min(network), max=max(network), median=median(network), mean=mean(network), sd=sd(network)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+
+data %>% 
+  summarise(min=min(network), max=max(network), median=median(network), mean=mean(network), sd=sd(network)) %>% 
+  mutate(cv=100 * sd/mean) %>% as.data.frame()
+```
+
+## Analyse data per block
+
+```{r}
+data_f_low_w_low = data %>% filter(frequency == "F_LOW", workload == "W_LOW")
+data_f_low_w_medium = data %>% filter(frequency == "F_LOW", workload == "W_MEDIUM")
+data_f_low_w_high = data %>% filter(frequency == "F_LOW", workload == "W_HIGH")
+
+data_f_medium_w_low = data %>% filter(frequency == "F_MEDIUM", workload == "W_LOW")
+data_f_medium_w_medium = data %>% filter(frequency == "F_MEDIUM", workload == "W_MEDIUM")
+data_f_medium_w_high = data %>% filter(frequency == "F_MEDIUM", workload == "W_HIGH")
+
+data_f_high_w_low = data %>% filter(frequency == "F_HIGH", workload == "W_LOW")
+data_f_high_w_medium = data %>% filter(frequency == "F_HIGH", workload == "W_MEDIUM")
+data_f_high_w_high = data %>% filter(frequency == "F_HIGH", workload == "W_HIGH")
+
+blocks <- list(data_f_low_w_low, data_f_low_w_medium, data_f_low_w_high, data_f_medium_w_low, data_f_medium_w_medium, data_f_medium_w_high, data_f_high_w_low, data_f_high_w_medium, data_f_high_w_high)
+
+metrics <- c("energy", "cpu", "memory", "network", "load", "duration")
+```
+
+### Normality checks
+
+Investigating the normality of the dependent variables. We consider a significance level of 0.05.
+
+```{r}
+check_normality = function(dep_var, metric) {
+  plot(density(dep_var))
+  qqPlot(dep_var, ylab=metric)
+  shapiro_result <- shapiro.test(dep_var)
+  return(shapiro_result$p.value)
+}
+```
+
+```{r}
+for(i in 1:length(blocks)) {
+  for(j in 1:length(metrics)) {
+    metric <- metrics[j]
+    print(metric)
+    
+    p_value <- check_normality(blocks[[i]][[metric]], metric)
+    print(p_value)
+    
+    if (p_value > 0.05) {
+      print("The p-value for testing H~0~ is greater than 0.05, hence we cannot reject the null hypothesis that energy efficiency data is normally distributed.")
+    } else {
+      print("The p-value for testing H~0~ is lower than 0.05, hence we reject the null hypothesis that energy efficiency data is normally distributed.")
+      
+    }
+  }
+}
+```
+
+#### Hypothesis:
+
+H~0~: energy/cpu/memory/network/load/duration sample is drawn from a normal distribution \n
+
+H~1~: energy/cpu/memory/network/load/duration sample is NOT drawn from a normal distribution
+
+#### Outcome:
+
+The p-value for testing H~0~ is greater than 0.05, hence we cannot reject the null hypothesis that energy/cpu/memory/network/load/duration data is normally distributed.
+
+### Statistical tests
+
+We have one factor, \> 2 treatments and we cannot assume normality of the data, hence we apply Kruskal-Wallis to test for the effect of the treatments (monitoring tools) on energy.
+
+To keep the overall error of falsely rejecting a null hypothesis and to decrease the number of false positives, we perform p-value adjustments for multiple testing, namely the Benjamini-Hochberg correction.
+
+#### Kruskal-Wallis
+
+```{r}
+kruskal_with_independent_variable_tool = function(data, dep_var) {
+  res.kruskal <- data %>% kruskal_test(data[[dep_var]] ~ tool)
+  
+  
+  print(res.kruskal$p)
+  
+  if (res.kruskal$p > 0.05) {
+      print("The p-value for testing H~0~ is greater than the alpha level, hence we cannot reject the null hypothesis that energy does not significantly differ among different monitoring tools. There is no statistical significance between the variables.")
+  } else {
+    print("The p-value for testing H~0~ is lower than the alpha level, hence we reject the null hypothesis that energy does not significantly differ among different monitoring tools.")
+  }
+  
+   # Compute the effect size for Kruskal-Wallis test
+  eff <- data %>% kruskal_effsize(data[[dep_var]] ~ tool)
+
+  print(eff$effsize)
+  print(eff$magnitude)
+  
+  return(res.kruskal$p)
+}
+```
+
+```{r}
+for(i in 1:length(blocks)) {
+  print(i)
+  
+  for(j in 1:length(metrics)) {
+    if (metrics[j] == "energy") {
+      metric <- metrics[j]
+     
+      p_value <- kruskal_with_independent_variable_tool(blocks[[i]], metric)
+    }
+  }
+}
+```
+
+#### Wilcox test (pairwise comparison)
+```{r}
+wilcox_with_independent_variable_tool = function(data, dep_var) {
+  
+  res.wilcox <- data %>% wilcox_test(dep_var, p.adjust.method = "BH", ref.group = "baseline", exact = F)
+  
+  return(res.wilcox)
+}
+blocks <- list(data_f_low_w_low, data_f_low_w_medium, data_f_low_w_high, data_f_medium_w_low, data_f_medium_w_medium, data_f_medium_w_high, data_f_high_w_low, data_f_high_w_medium, data_f_high_w_high)
+
+for(i in 1:length(blocks)) {
+  res <- wilcox_with_independent_variable_tool(blocks[[i]], energy ~ tool)
+  print(res)
+  
+#  res <- wilcox_with_independent_variable_tool(blocks[[i]], cpu ~ tool)
+#  print(res)
+  
+#  res <- wilcox_with_independent_variable_tool(blocks[[i]], memory ~ tool)
+#  print(res)
+  
+#  res <- wilcox_with_independent_variable_tool(blocks[[i]], network ~ tool)
+#  print(res)
+  
+#  res <- wilcox_with_independent_variable_tool(blocks[[i]], load ~ tool)
+#  print(res)
+  
+#  res <- wilcox_with_independent_variable_tool(blocks[[i]], duration ~ tool)
+#  print(res)
+}
+```
+
+
+#### Effect size
+
+We estimate the effect size using the Cliff's Delta effect size test. We analyze the degree of overlap between the two distributions of scores.
+
+```{r}
+
+check_effect_size = function(df, dep_var) {
+  result = data.frame()
+  
+  df.baseline = df %>% filter(tool == "baseline")
+  df.elastic = df %>% filter(tool == "elastic")
+  df.netdata = df %>% filter(tool == "netdata")
+  df.prometheus = df %>% filter(tool == "prometheus")
+  df.zipkin = df %>% filter(tool == "zipkin")
+  
+  cd.elastic = cliff.delta(df.baseline[[dep_var]], df.elastic[[dep_var]])
+  cd.netdata = cliff.delta(df.baseline[[dep_var]], df.netdata[[dep_var]])
+  cd.prometheus = cliff.delta(df.baseline[[dep_var]], df.prometheus[[dep_var]])
+  cd.zipkin = cliff.delta(df.baseline[[dep_var]], df.zipkin[[dep_var]])
+  
+  result = rbind(result, list("elastic", "cd", cd.elastic$estimate, cd.elastic$magnitude, dep_var))
+  result = rbind(result, list("netdata", "cd", cd.netdata$estimate, cd.netdata$magnitude, dep_var))
+  result = rbind(result, list("prometheus", "cd", cd.prometheus$estimate, cd.prometheus$magnitude, dep_var))
+  result = rbind(result, list("zipkin", "cd", cd.zipkin$estimate, cd.zipkin$magnitude, dep_var))
+  
+  colnames(result) <- c("tool","type", "estimate", "magnitude", "dependent variable")
+  
+  return(result)
+}
+
+for(i in 1:length(blocks)) {
+  for(j in 1:length(metrics)) {
+    eff_size <- check_effect_size(blocks[[i]], metrics[[j]])
+    print(eff_size)
+  }
+}
+```
