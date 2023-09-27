@@ -19,15 +19,15 @@ If the dataset and/or experiment setup is helping your research, consider to cit
 
 ```
 @inproceedings{10.1145/3593434.3593454,
-author = {Madalina Dinga and Ivano Malavolta and Luca Giammattei and Antonio Guerriero and Roberto Pietrantuono},
-title = {{An Empirical Evaluation of Energy and Performance Overhead of Monitoring Tools on Docker-based Systems}},
-year = {2023},
-url = {http://www.ivanomalavolta.com/files/papers/ICSOC_2023.pdf},
-booktitle = {Proceedings of the 21st International Conference on Service-Oriented Computing},
-pages = {To appear},
-numpages = {15},
-location = {Rome, Italy},
-series = {ICSOC '23}
+	author = {Madalina Dinga and Ivano Malavolta and Luca Giammattei and Antonio Guerriero and Roberto Pietrantuono},
+	title = {{An Empirical Evaluation of Energy and Performance Overhead of Monitoring Tools on Docker-based Systems}},
+	year = {2023},
+	url = {http://www.ivanomalavolta.com/files/papers/ICSOC_2023.pdf},
+	booktitle = {Proceedings of the 21st International Conference on Service-Oriented Computing},
+	pages = {To appear},
+	numpages = {15},
+	location = {Rome, Italy},
+	series = {ICSOC '23}
 }
 ```
 
