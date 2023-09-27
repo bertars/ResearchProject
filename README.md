@@ -8,7 +8,7 @@ This repo contains the raw data and analysis scripts related to all the activiti
 This study has been designed, developed, and reported by the following investigators:
 - Madalina Dinga (VU Amsterdam)
 - Ivano Malavolta (VU Amsterdam)
-- Luca Giammattei (University of Naples Federico II)
+- Luca Giamattei (University of Naples Federico II)
 - Antonio Guerriero (University of Naples Federico II)
 - Roberto Pietrantuono (University of Naples Federico II)
 
@@ -19,7 +19,7 @@ If the dataset and/or experiment setup is helping your research, consider to cit
 
 ```
 @inproceedings{10.1145/3593434.3593454,
-	author = {Madalina Dinga and Ivano Malavolta and Luca Giammattei and Antonio Guerriero and Roberto Pietrantuono},
+	author = {Madalina Dinga and Ivano Malavolta and Luca Giamattei and Antonio Guerriero and Roberto Pietrantuono},
 	title = {{An Empirical Evaluation of Energy and Performance Overhead of Monitoring Tools on Docker-based Systems}},
 	year = {2023},
 	url = {http://www.ivanomalavolta.com/files/papers/ICSOC_2023.pdf},
