@@ -18,9 +18,9 @@ For any information, interested researchers can contact us by sending an email t
 If the dataset and/or experiment setup is helping your research, consider to cite our study as follows, thanks!
 
 ```
-@inproceedings{10.1145/3593434.3593454,
+@inproceedings{ICSOC_2023,
 	author = {Madalina Dinga and Ivano Malavolta and Luca Giamattei and Antonio Guerriero and Roberto Pietrantuono},
-	title = {{An Empirical Evaluation of Energy and Performance Overhead of Monitoring Tools on Docker-based Systems}},
+	title = {{An Empirical Evaluation of the Energy and Performance Overhead of Monitoring Tools on Docker-based Systems}},
 	year = {2023},
 	url = {http://www.ivanomalavolta.com/files/papers/ICSOC_2023.pdf},
 	booktitle = {Proceedings of the 21st International Conference on Service-Oriented Computing},
