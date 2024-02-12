@@ -1,0 +1,25 @@
+server:
+  port: 18888
+
+spring:
+  application:
+    name: ts-assurance-service
+  data:
+    mongodb:
+      host: ts-assurance-mongo
+#      username: user
+#      password: ${MONGODB_PASSWORD}
+      database: ts
+      port: 27017
+
+swagger:
+  controllerPackage: assurance.controller
+
+logging:
+  file: logs/ts-assurance-service.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    fdse.microservice: DEBUG

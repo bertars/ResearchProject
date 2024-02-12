@@ -1,0 +1,2859 @@
+{
+    "metrics": {
+        "http_req_sending": {
+            "min": 0.006709,
+            "med": 0.017568,
+            "max": 18.781973,
+            "p(90)": 0.05838780000000002,
+            "p(95)": 0.06773079999999992,
+            "avg": 0.02968612312865039
+        },
+        "checks": {
+            "passes": 129034,
+            "fails": 8968,
+            "value": 0.9350154345589194
+        },
+        "iteration_duration": {
+            "avg": 20518.545899416782,
+            "min": 492.97736,
+            "med": 18214.583897,
+            "max": 78751.949352,
+            "p(90)": 24414.433532,
+            "p(95)": 45496.862647
+        },
+        "group_duration": {
+            "avg": 125.27735725559559,
+            "min": 0.731155,
+            "med": 9.621296000000001,
+            "max": 9446.374321,
+            "p(90)": 130.8655481,
+            "p(95)": 245.19151669999997
+        },
+        "iterations": {
+            "rate": 0.9651487367856055,
+            "count": 690
+        },
+        "http_reqs": {
+            "count": 138002,
+            "rate": 193.0325448896915
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(95)": 151.3051575,
+            "avg": 87.73711710186006,
+            "min": 0.658449,
+            "med": 4.913219,
+            "max": 9445.867927,
+            "p(90)": 58.043608
+        },
+        "http_req_blocked": {
+            "p(95)": 0.34844994999999995,
+            "avg": 0.07302315387458065,
+            "min": 0.001188,
+            "med": 0.002698,
+            "max": 16.434706,
+            "p(90)": 0.320338
+        },
+        "http_req_connecting": {
+            "min": 0,
+            "med": 0,
+            "max": 16.327067,
+            "p(90)": 0.258863,
+            "p(95)": 0.2791218999999999,
+            "avg": 0.05713305904986911
+        },
+        "http_req_failed": {
+            "passes": 8096,
+            "fails": 129906,
+            "value": 0.05866581643744294
+        },
+        "vus_max": {
+            "value": 20,
+            "min": 20,
+            "max": 20
+        },
+        "http_req_duration": {
+            "max": 9445.867927,
+            "p(90)": 57.80581190000006,
+            "p(95)": 148.18857749999992,
+            "avg": 84.4377450291533,
+            "min": 0.658449,
+            "med": 5.2828475
+        },
+        "http_req_receiving": {
+            "avg": 2.0470193489152404,
+            "min": 0.019295,
+            "med": 0.4217065,
+            "max": 504.364345,
+            "p(90)": 2.7719094000000015,
+            "p(95)": 6.933741549999978
+        },
+        "vus": {
+            "max": 20,
+            "value": 5,
+            "min": 5
+        },
+        "http_req_waiting": {
+            "max": 9444.621563,
+            "p(90)": 52.0669911000002,
+            "p(95)": 135.5747402999996,
+            "avg": 82.36103955710702,
+            "min": 0.617524,
+            "med": 4.6030475
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "data_received": {
+            "count": 530356654,
+            "rate": 741845.0067448412
+        },
+        "data_sent": {
+            "count": 67166410,
+            "rate": 93950.10980568705
+        }
+    },
+    "setup_data": [
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWQiOiIyOWJmZmI5MS04ZDI0LTQ5YWMtODM0YS00MWU3NGMwNDFjM2UiLCJpYXQiOjE2NjY0NjE4MzAsImV4cCI6MTY2NjQ2NTQzMH0.y4WcRpJ9ZJ8-q3JT62QtU4eajmO81wp72fSMHzRRj5k",
+        "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmZHNlX21pY3Jvc2VydmljZSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpZCI6IjRkMmE0NmM3LTcxY2ItNGNmMS1iNWJiLWI2ODQwNmQ5ZGE2ZiIsImlhdCI6MTY2NjQ2MTgzMCwiZXhwIjoxNjY2NDY1NDMwfQ.iQMtu5jrgQCwGOhnYEYD5d6r1gJx1trbfVf9FGt53qA"
+    ],
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "setup": {
+                "path": "::setup",
+                "id": "5c0f8025f7e0b6654089e5b00e950f1a",
+                "groups": {},
+                "checks": {
+                        "Logged in successfully": {
+                            "name": "Logged in successfully",
+                            "path": "::setup::Logged in successfully",
+                            "id": "ef781a501d8aa01ba634856a1e9abaf4",
+                            "passes": 2,
+                            "fails": 0
+                        }
+                    },
+                "name": "setup"
+            },
+            "/api/v1/adminbasicservice/adminbasic/trains/{id}": {
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "id": "be12d542b097f96b5171bf7b0810ce8a",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/trains/{id}::DELETE OK"
+                        }
+                    },
+                "name": "/api/v1/adminbasicservice/adminbasic/trains/{id}",
+                "path": "::/api/v1/adminbasicservice/adminbasic/trains/{id}",
+                "id": "e6c7bfd90222b33ce4ba9a4c4f1262ac"
+            },
+            "/api/v1/adminbasicservice/adminbasic/prices": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/prices::GET OK",
+                            "id": "39e5966173e10e72b84ab4b242fa7736",
+                            "passes": 690
+                        },
+                        "DELETE OK": {
+                            "id": "1bce7daa496ca69f7e406b356e978d8e",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/prices::DELETE OK"
+                        }
+                    },
+                "name": "/api/v1/adminbasicservice/adminbasic/prices",
+                "path": "::/api/v1/adminbasicservice/adminbasic/prices",
+                "id": "4e4dbe7582fc3a98882962d70114bf99"
+            },
+            "/api/v1/adminbasicservice/adminbasic/configs/{name}": {
+                "id": "f7169ca58db41a6c7d373867fceb3e02",
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/configs/{name}::DELETE OK",
+                            "id": "a0d4b4e44eaba509cce9d7321c09b4a8",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/adminbasicservice/adminbasic/configs/{name}",
+                "path": "::/api/v1/adminbasicservice/adminbasic/configs/{name}"
+            },
+            "/api/v1/adminbasicservice/welcome": {
+                "name": "/api/v1/adminbasicservice/welcome",
+                "path": "::/api/v1/adminbasicservice/welcome",
+                "id": "080da87f4136a9c76b7ca53eff81a18d",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminbasicservice/welcome::GET OK",
+                            "id": "05c01d9ba76eeac8d60c494401397592",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/adminbasicservice/adminbasic/stations": {
+                "name": "/api/v1/adminbasicservice/adminbasic/stations",
+                "path": "::/api/v1/adminbasicservice/adminbasic/stations",
+                "id": "e87bba784a0cf5c1ad9cb60ae68cfd24",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/stations::GET OK",
+                            "id": "f94151c38606a651d0df196ab0946e47",
+                            "passes": 690
+                        },
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/stations::DELETE OK",
+                            "id": "54057317027f9e52f734ce585157f474",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/adminbasicservice/adminbasic/configs": {
+                "path": "::/api/v1/adminbasicservice/adminbasic/configs",
+                "id": "0e42c4fad24e46b7978024c533c4eacf",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/configs::GET OK",
+                            "id": "ff1bd2ce544678e54d9464d7a43984ee"
+                        },
+                        "POST OK": {
+                            "path": "::/api/v1/adminbasicservice/adminbasic/configs::POST OK",
+                            "id": "574df68dae054d73f3175ee302956645",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    },
+                "name": "/api/v1/adminbasicservice/adminbasic/configs"
+            },
+            "/api/v1/adminbasicservice/adminbasic/trains": {
+                "name": "/api/v1/adminbasicservice/adminbasic/trains",
+                "path": "::/api/v1/adminbasicservice/adminbasic/trains",
+                "id": "63f0c48d5827228338186e34e6b5ddba",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/trains::GET OK",
+                            "id": "7bddd4b50b93828c925cfd63fd1172ad"
+                        },
+                        "POST OK": {
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/trains::POST OK",
+                            "id": "046a43e7cd64b2c22e6bdf237a5d5d26",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/adminbasicservice/adminbasic/contacts": {
+                "name": "/api/v1/adminbasicservice/adminbasic/contacts",
+                "path": "::/api/v1/adminbasicservice/adminbasic/contacts",
+                "id": "379e4dd72074a742fbcefac8e1ffaf3e",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/contacts::GET OK",
+                            "id": "c5fa0e9e100d1633e0982616f845d086",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/contacts::POST OK",
+                            "id": "104c52e430154255efa62c6e0777201b"
+                        }
+                    }
+            },
+            "/api/v1/adminbasicservice/adminbasic/contacts/{contactsId}": {
+                "name": "/api/v1/adminbasicservice/adminbasic/contacts/{contactsId}",
+                "path": "::/api/v1/adminbasicservice/adminbasic/contacts/{contactsId}",
+                "id": "7bf4a9fec9de72a2a3893772250bacc3",
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/adminbasicservice/adminbasic/contacts/{contactsId}::DELETE OK",
+                            "id": "783d341cad528a933583b524f13a6e12",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/assuranceservice/assurance/orderid/{orderId}": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/assuranceservice/assurance/orderid/{orderId}::GET OK",
+                            "id": "7c65e304a39999d448172953db5091e8",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/assuranceservice/assurance/orderid/{orderId}",
+                "path": "::/api/v1/assuranceservice/assurance/orderid/{orderId}",
+                "id": "2df976bb07b1544eb2f86a60e1f9ff2c"
+            },
+            "/api/v1/assuranceservice/assurances/assuranceid/{assuranceId}": {
+                "checks": {
+                    "GET OK": {
+                        "id": "a989504dd1ece2035e84978266255311",
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/assuranceservice/assurances/assuranceid/{assuranceId}::GET OK"
+                    },
+                    "DELETE OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "DELETE OK",
+                        "path": "::/api/v1/assuranceservice/assurances/assuranceid/{assuranceId}::DELETE OK",
+                        "id": "8de8dc8919bebdb6b0a0189850777fcd"
+                    }
+                },
+                "name": "/api/v1/assuranceservice/assurances/assuranceid/{assuranceId}",
+                "path": "::/api/v1/assuranceservice/assurances/assuranceid/{assuranceId}",
+                "id": "ccb6fb7b31fcafb2649344646f66b06c",
+                "groups": {}
+            },
+            "/api/v1/assuranceservice/welcome": {
+                "checks": {
+                    "GET OK": {
+                        "name": "GET OK",
+                        "path": "::/api/v1/assuranceservice/welcome::GET OK",
+                        "id": "a08ac2017caaa45d182449a433186705",
+                        "passes": 690,
+                        "fails": 0
+                    }
+                },
+                "name": "/api/v1/assuranceservice/welcome",
+                "path": "::/api/v1/assuranceservice/welcome",
+                "id": "df601fdd48d3512b5334aa10e3061abc",
+                "groups": {}
+            },
+            "/api/v1/assuranceservice/assurances/{typeIndex}/{orderId}": {
+                "name": "/api/v1/assuranceservice/assurances/{typeIndex}/{orderId}",
+                "path": "::/api/v1/assuranceservice/assurances/{typeIndex}/{orderId}",
+                "id": "bea2cd62f41286396a58eb38023fb9a1",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/assuranceservice/assurances/{typeIndex}/{orderId}::GET OK",
+                            "id": "ebc9cd12cf01656ab396127e51aeb89b",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/assuranceservice/assurances": {
+                "name": "/api/v1/assuranceservice/assurances",
+                "path": "::/api/v1/assuranceservice/assurances",
+                "id": "4ee1b3d76abd13f462b9d642fa55f58d",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/assuranceservice/assurances::GET OK",
+                            "id": "744166af581a1ae71f2d5a51738e4267",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/adminorderservice/adminorder": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminorderservice/adminorder::GET OK",
+                            "id": "ad0ecb8e10e90a7fd755776470b23689",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/adminorderservice/adminorder::POST OK",
+                            "id": "2422c946c972b86f96392cc773e472c9",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    },
+                "name": "/api/v1/adminorderservice/adminorder",
+                "path": "::/api/v1/adminorderservice/adminorder",
+                "id": "2fb20ac3300afd757894e151502b1adb"
+            },
+            "/api/v1/adminorderservice/welcome": {
+                "name": "/api/v1/adminorderservice/welcome",
+                "path": "::/api/v1/adminorderservice/welcome",
+                "id": "aa3e41cc42399b1b301108b7d5890cef",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminorderservice/welcome::GET OK",
+                            "id": "32c491727cc8a8f53f7eeef75453f316",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/adminorderservice/adminorder/{orderId}/{trainNumber}": {
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/adminorderservice/adminorder/{orderId}/{trainNumber}::DELETE OK",
+                            "id": "7a8fe570d7e1b938fb9a8c1283590c08"
+                        }
+                    },
+                "name": "/api/v1/adminorderservice/adminorder/{orderId}/{trainNumber}",
+                "path": "::/api/v1/adminorderservice/adminorder/{orderId}/{trainNumber}",
+                "id": "82d7e9f838ea88d5e61ed820ab806de4"
+            },
+            "/api/v1/adminrouteservice/adminroute/{routeId}": {
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/adminrouteservice/adminroute/{routeId}::DELETE OK",
+                            "id": "08c312089f9b3d4beaff60705b225e0b",
+                            "passes": 690
+                        }
+                    },
+                "name": "/api/v1/adminrouteservice/adminroute/{routeId}",
+                "path": "::/api/v1/adminrouteservice/adminroute/{routeId}",
+                "id": "428f96072f57055397c3c84ae6fda80b"
+            },
+            "/api/v1/adminrouteservice/adminroute": {
+                "path": "::/api/v1/adminrouteservice/adminroute",
+                "id": "0c042242ef4b9bcf8638b68a5d3f7c1a",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminrouteservice/adminroute::GET OK",
+                            "id": "8abef142a677b8e1f94653295a3124c3",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/adminrouteservice/adminroute::POST OK",
+                            "id": "eaa32eeecff36a28afe707a91647a44a",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/adminrouteservice/adminroute"
+            },
+            "/api/v1/adminrouteservice/welcome": {
+                "name": "/api/v1/adminrouteservice/welcome",
+                "path": "::/api/v1/adminrouteservice/welcome",
+                "id": "2a8123fbb58600cd100903982204343f",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/adminrouteservice/welcome::GET OK",
+                            "id": "2c2aff77a125a72c47df4e396a308a69",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/admintravelservice/admintravel/{tripId}": {
+                "name": "/api/v1/admintravelservice/admintravel/{tripId}",
+                "path": "::/api/v1/admintravelservice/admintravel/{tripId}",
+                "id": "9f260d8604b3862ca766d4e00eb0ffa5",
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/admintravelservice/admintravel/{tripId}::DELETE OK",
+                            "id": "abe85d6250b583d764f12983f649a3ae",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/admintravelservice/welcome": {
+                "checks": {
+                    "GET OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/admintravelservice/welcome::GET OK",
+                        "id": "e26b26d54486123bc2bd6591ed209f9b"
+                    }
+                },
+                "name": "/api/v1/admintravelservice/welcome",
+                "path": "::/api/v1/admintravelservice/welcome",
+                "id": "1c52fc5bc113f6e7432a31a4a9acd9c5",
+                "groups": {}
+            },
+            "/api/v1/admintravelservice/admintravel": {
+                "name": "/api/v1/admintravelservice/admintravel",
+                "path": "::/api/v1/admintravelservice/admintravel",
+                "id": "d6804a5c637b2a786bc38ebe0a872148",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/admintravelservice/admintravel::GET OK",
+                            "id": "481889ab71cc954047bf9cf827363ba3",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/admintravelservice/admintravel::POST OK",
+                            "id": "113521017e1017c54c3f6d23b4a16fc3",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/adminuserservice/users/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminuserservice/users/welcome::GET OK",
+                            "id": "245d211f7d4e4e393ff74a57bc154dec",
+                            "passes": 690
+                        }
+                    },
+                "name": "/api/v1/adminuserservice/users/welcome",
+                "path": "::/api/v1/adminuserservice/users/welcome",
+                "id": "7022470027fa754dda940f1f92478071"
+            },
+            "/api/v1/adminuserservice/users/{userId}": {
+                "path": "::/api/v1/adminuserservice/users/{userId}",
+                "id": "45a3fe4125fe3299fa1dca7e2fad259a",
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "path": "::/api/v1/adminuserservice/users/{userId}::DELETE OK",
+                            "id": "2890b24f04959c0b6bff0e11a3ef1737",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "DELETE OK"
+                        }
+                    },
+                "name": "/api/v1/adminuserservice/users/{userId}"
+            },
+            "/api/v1/adminuserservice/users": {
+                "path": "::/api/v1/adminuserservice/users",
+                "id": "0b92fd24dbd7b1322fc115d209d20dfa",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/adminuserservice/users::GET OK",
+                            "id": "774edd609b8a6b14509b34d54e064df9",
+                            "passes": 690
+                        },
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/adminuserservice/users::POST OK",
+                            "id": "5cfe7d5f85aaabcae667901b019911cd",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/adminuserservice/users"
+            },
+            "/api/v1/assuranceservice/assurances/types": {
+                "name": "/api/v1/assuranceservice/assurances/types",
+                "path": "::/api/v1/assuranceservice/assurances/types",
+                "id": "e478d13252e788f7043fff595ce0a86c",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/assuranceservice/assurances/types::GET OK",
+                            "id": "4c538c0bc5cc5e1012c50668c443915e",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/assuranceservice/assurances/{assuranceId}/{orderId}/{typeIndex}": {
+                "name": "/api/v1/assuranceservice/assurances/{assuranceId}/{orderId}/{typeIndex}",
+                "path": "::/api/v1/assuranceservice/assurances/{assuranceId}/{orderId}/{typeIndex}",
+                "id": "28be9782139219dd61f47ff81cd6b3fb",
+                "groups": {},
+                "checks": {
+                        "OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "OK",
+                            "path": "::/api/v1/assuranceservice/assurances/{assuranceId}/{orderId}/{typeIndex}::OK",
+                            "id": "fbb8c4471e1eda28ffb7c5f79270dc69"
+                        }
+                    }
+            },
+            "/api/v1/assuranceservice/assurances/orderid/{orderId}": {
+                "name": "/api/v1/assuranceservice/assurances/orderid/{orderId}",
+                "path": "::/api/v1/assuranceservice/assurances/orderid/{orderId}",
+                "id": "5dbe8d623c174f679d0bd71e2ab10640",
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/assuranceservice/assurances/orderid/{orderId}::DELETE OK",
+                            "id": "82f0468c17f15d54aaacf8ec35e712b2",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/basicservice/basic/{stationName}": {
+                "checks": {
+                    "GET OK": {
+                        "name": "GET OK",
+                        "path": "::/api/v1/basicservice/basic/{stationName}::GET OK",
+                        "id": "51880a2be3bda4fa65ded5f7de805250",
+                        "passes": 690,
+                        "fails": 0
+                    }
+                },
+                "name": "/api/v1/basicservice/basic/{stationName}",
+                "path": "::/api/v1/basicservice/basic/{stationName}",
+                "id": "9286e2f947501ab4814032f01acc574e",
+                "groups": {}
+            },
+            "/api/v1/basicservice/welcome": {
+                "name": "/api/v1/basicservice/welcome",
+                "path": "::/api/v1/basicservice/welcome",
+                "id": "c6274d2996d9ec1ace11169d30dbb69f",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/basicservice/welcome::GET OK",
+                            "id": "82a09db63fe0324e5147f8f21d780960",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/basicservice/basic/travel": {
+                "id": "2a2b3971708c967a4cf8357aad3f843a",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/basicservice/basic/travel::POST OK",
+                            "id": "1161060c8ed79d8803afc1c67bcf8609",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    },
+                "name": "/api/v1/basicservice/basic/travel",
+                "path": "::/api/v1/basicservice/basic/travel"
+            },
+            "/api/v1/cancelservice/cancel/refound/{orderId}": {
+                "path": "::/api/v1/cancelservice/cancel/refound/{orderId}",
+                "id": "10d6c6e3894b5aa0e1568700fefb4309",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/cancelservice/cancel/refound/{orderId}::GET OK",
+                            "id": "93721e869cdd90d28e649f36c73b2566",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/cancelservice/cancel/refound/{orderId}"
+            },
+            "/api/v1/cancelservice/cancel/{orderId}/{loginId}": {
+                "name": "/api/v1/cancelservice/cancel/{orderId}/{loginId}",
+                "path": "::/api/v1/cancelservice/cancel/{orderId}/{loginId}",
+                "id": "8a22c04b380f1c079fcf01fad3211dab",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/cancelservice/cancel/{orderId}/{loginId}::GET OK",
+                            "id": "3a16d094ae44108ca4f27466bbea0062",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/cancelservice/welcome": {
+                "name": "/api/v1/cancelservice/welcome",
+                "path": "::/api/v1/cancelservice/welcome",
+                "id": "12a30eb47cbe3d58ef76896e5209a882",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/cancelservice/welcome::GET OK",
+                            "id": "a04656064f6ab64d9c0ac29aa5e1b6ce",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/configservice/welcome": {
+                "name": "/api/v1/configservice/welcome",
+                "path": "::/api/v1/configservice/welcome",
+                "id": "b538004dbc39bbd807f02a136d06392a",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/configservice/welcome::GET OK",
+                            "id": "0b757bf61ee1b0656298b95d0f0c4c6d",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/configservice/configs/{configName}": {
+                "path": "::/api/v1/configservice/configs/{configName}",
+                "id": "a7af5beae944b17b78fb2fea69716404",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "id": "8bb31b3ece4a636ccc905119bee37eea",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/configservice/configs/{configName}::GET OK"
+                        },
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/configservice/configs/{configName}::DELETE OK",
+                            "id": "a0d6d7eb1d57242a7b0402f5d49c91ed",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/configservice/configs/{configName}"
+            },
+            "/api/v1/configservice/configs": {
+                "checks": {
+                    "GET OK": {
+                        "name": "GET OK",
+                        "path": "::/api/v1/configservice/configs::GET OK",
+                        "id": "15483cbba929a8b2ea453f641cad8ea9",
+                        "passes": 690,
+                        "fails": 0
+                    },
+                    "POST OK": {
+                        "fails": 0,
+                        "name": "POST OK",
+                        "path": "::/api/v1/configservice/configs::POST OK",
+                        "id": "7e4c85cdfb2da4ec35aff2df21696933",
+                        "passes": 690
+                    }
+                },
+                "name": "/api/v1/configservice/configs",
+                "path": "::/api/v1/configservice/configs",
+                "id": "0a14d7defaf4b8ee7ae030f4ef0a3db2",
+                "groups": {}
+            },
+            "/api/v1/consignpriceservice/consignprice/{weight}/{isWithinRegion}": {
+                "name": "/api/v1/consignpriceservice/consignprice/{weight}/{isWithinRegion}",
+                "path": "::/api/v1/consignpriceservice/consignprice/{weight}/{isWithinRegion}",
+                "id": "2be1a9b5f8ec636ea35e08676394dd45",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/consignpriceservice/consignprice/{weight}/{isWithinRegion}::GET OK",
+                            "id": "24557fa8ca17d0d13bfa31c36f690153",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/consignpriceservice/consignprice/price": {
+                "name": "/api/v1/consignpriceservice/consignprice/price",
+                "path": "::/api/v1/consignpriceservice/consignprice/price",
+                "id": "e8a91fa0e12d35c01156265c055872eb",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/consignpriceservice/consignprice/price::GET OK",
+                            "id": "ad9463702ab95bde695e1929ae0ae994",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/consignpriceservice/consignprice/config": {
+                "id": "0a29d14fe53ba8ae132238bedd80f90b",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/consignpriceservice/consignprice/config::GET OK",
+                            "id": "ab219f66ac3b2c8d2e6ae2869fe262a6",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/consignpriceservice/consignprice/config",
+                "path": "::/api/v1/consignpriceservice/consignprice/config"
+            },
+            "/api/v1/consignpriceservice/consignprice": {
+                "id": "13a9c671b3e2fd9e2ae789a6db5916d8",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "path": "::/api/v1/consignpriceservice/consignprice::POST OK",
+                            "id": "44129e80b08a623e3b26867ba6ac0a34",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    },
+                "name": "/api/v1/consignpriceservice/consignprice",
+                "path": "::/api/v1/consignpriceservice/consignprice"
+            },
+            "/api/v1/consignpriceservice/welcome": {
+                "name": "/api/v1/consignpriceservice/welcome",
+                "path": "::/api/v1/consignpriceservice/welcome",
+                "id": "9476042f208748dd56db945d0ba0727d",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/consignpriceservice/welcome::GET OK",
+                            "id": "7bf602264611a73f9e2c4cdc5e9c66b7",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/consignservice/consigns/{consignee}": {
+                "name": "/api/v1/consignservice/consigns/{consignee}",
+                "path": "::/api/v1/consignservice/consigns/{consignee}",
+                "id": "e4853e5950c4bf92475304a26c181f75",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/consignservice/consigns/{consignee}::GET OK",
+                            "id": "ddac3d0d67e607f5512baf455d12cf25",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/consignservice/consigns": {
+                "name": "/api/v1/consignservice/consigns",
+                "path": "::/api/v1/consignservice/consigns",
+                "id": "b31fd86e5d7940e8de70498e1f93a81d",
+                "groups": {},
+                "checks": {
+                        "PUT OK": {
+                            "name": "PUT OK",
+                            "path": "::/api/v1/consignservice/consigns::PUT OK",
+                            "id": "3f47ba67504fa96eb5724e35b8e7b15f",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "path": "::/api/v1/consignservice/consigns::POST OK",
+                            "id": "09b8cc8bdf4ce096aa5319ab40c21138",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    }
+            },
+            "/api/v1/consignservice/consigns/account/{id}": {
+                "name": "/api/v1/consignservice/consigns/account/{id}",
+                "path": "::/api/v1/consignservice/consigns/account/{id}",
+                "id": "1aa4cbd61b02abf16e5dc8d488f2f610",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/consignservice/consigns/account/{id}::GET OK",
+                            "id": "72712257d17ecc11783197c153691189",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/consignservice/consigns/order/{id}": {
+                "checks": {
+                    "GET OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/consignservice/consigns/order/{id}::GET OK",
+                        "id": "6a660eece4730b7d123b1e23a079c477"
+                    }
+                },
+                "name": "/api/v1/consignservice/consigns/order/{id}",
+                "path": "::/api/v1/consignservice/consigns/order/{id}",
+                "id": "de0891f6850c405e16e42b5760fea858",
+                "groups": {}
+            },
+            "/api/v1/consignservice/welcome": {
+                "id": "cbf8e9206feb004d757ba5ec49c2eefb",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/consignservice/welcome::GET OK",
+                            "id": "82416725563a55701478dba022b20bea",
+                            "passes": 690
+                        }
+                    },
+                "name": "/api/v1/consignservice/welcome",
+                "path": "::/api/v1/consignservice/welcome"
+            },
+            "/api/v1/contactservice/contacts/{contactsId}": {
+                "name": "/api/v1/contactservice/contacts/{contactsId}",
+                "path": "::/api/v1/contactservice/contacts/{contactsId}",
+                "id": "d771df41f18f9856c9c56bb339b1b053",
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/contactservice/contacts/{contactsId}::DELETE OK",
+                            "id": "9f4c4db179e413687f2bababf18985b4",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/contactservice/contacts": {
+                "path": "::/api/v1/contactservice/contacts",
+                "id": "d220b16a39f62186c39eef08338284fd",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/contactservice/contacts::GET OK",
+                            "id": "1c8fe0059947f47870b352bebdf820b2"
+                        },
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/contactservice/contacts::POST OK",
+                            "id": "f5b2725f68615e48b8ca77d3a3e52b38",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/contactservice/contacts"
+            },
+            "/api/v1/contactservice/contacts/admin": {
+                "name": "/api/v1/contactservice/contacts/admin",
+                "path": "::/api/v1/contactservice/contacts/admin",
+                "id": "24d5c0b9e7592f6b8104610f1bef1325",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "path": "::/api/v1/contactservice/contacts/admin::POST OK",
+                            "id": "4f540001a87da0707c14405a2daa3261",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    }
+            },
+            "/api/v1/contactservice/contacts/{id}": {
+                "checks": {
+                    "GET OK": {
+                        "path": "::/api/v1/contactservice/contacts/{id}::GET OK",
+                        "id": "52bc20d87ad9e8788d92967d542937a0",
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK"
+                    }
+                },
+                "name": "/api/v1/contactservice/contacts/{id}",
+                "path": "::/api/v1/contactservice/contacts/{id}",
+                "id": "11193130fbaacc1f71b6defe77a6b124",
+                "groups": {}
+            },
+            "/api/v1/contactservice/contacts/account/{accountId}": {
+                "name": "/api/v1/contactservice/contacts/account/{accountId}",
+                "path": "::/api/v1/contactservice/contacts/account/{accountId}",
+                "id": "29a6b28cd97fb12615785192830a8554",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/contactservice/contacts/account/{accountId}::GET OK",
+                            "id": "e24973cdd6c0599f7ff8cc3dd82ebfd5",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/contactservice/contacts/welcome": {
+                "name": "/api/v1/contactservice/contacts/welcome",
+                "path": "::/api/v1/contactservice/contacts/welcome",
+                "id": "9e427fdadec1c60e6af2966030d5cb8d",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/contactservice/contacts/welcome::GET OK",
+                            "id": "a7c6d93da405c6fe4add2fc1d0dcb495",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/executeservice/execute/execute/{orderId}": {
+                "id": "9c60cfb95b56508ec1d71b1b9295d0b6",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/executeservice/execute/execute/{orderId}::GET OK",
+                            "id": "39b371c6f8c5bcb0ae469ca8b35e529b"
+                        }
+                    },
+                "name": "/api/v1/executeservice/execute/execute/{orderId}",
+                "path": "::/api/v1/executeservice/execute/execute/{orderId}"
+            },
+            "/api/v1/executeservice/execute/collected/{orderId}": {
+                "path": "::/api/v1/executeservice/execute/collected/{orderId}",
+                "id": "13905bf0175556652af316eaa37c5197",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/executeservice/execute/collected/{orderId}::GET OK",
+                            "id": "21d29dd011008b82fb71b71eafa9ffc8",
+                            "passes": 690
+                        }
+                    },
+                "name": "/api/v1/executeservice/execute/collected/{orderId}"
+            },
+            "/api/v1/executeservice/welcome": {
+                "checks": {
+                    "GET OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/executeservice/welcome::GET OK",
+                        "id": "d978ef8165f3511d1860d0ae33c3964c"
+                    }
+                },
+                "name": "/api/v1/executeservice/welcome",
+                "path": "::/api/v1/executeservice/welcome",
+                "id": "8bda249c4968085e23e09e1f6d482806",
+                "groups": {}
+            },
+            "/api/v1/foodmapservice/trainfoods/{tripId}": {
+                "name": "/api/v1/foodmapservice/trainfoods/{tripId}",
+                "path": "::/api/v1/foodmapservice/trainfoods/{tripId}",
+                "id": "6cfcd4ef03b9826144300375ecd47deb",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/foodmapservice/trainfoods/{tripId}::GET OK",
+                            "id": "274e36e38951a7658299b91e8dfa32d9",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/foodmapservice/foodstores": {
+                "name": "/api/v1/foodmapservice/foodstores",
+                "path": "::/api/v1/foodmapservice/foodstores",
+                "id": "d7f0f46d6140161eb5f77b68a25b9a2b",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/foodmapservice/foodstores::GET OK",
+                            "id": "b2460b29eb002ec140370d9fd3857885",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        },
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/foodmapservice/foodstores::POST OK",
+                            "id": "9ad6201a473db573a399a7a9230dd2c8",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/foodmapservice/trainfoods": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/foodmapservice/trainfoods::GET OK",
+                            "id": "a13c9763359685f401390849ad06233c",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/foodmapservice/trainfoods",
+                "path": "::/api/v1/foodmapservice/trainfoods",
+                "id": "bb063418c3fef599f5db61ccb1969579"
+            },
+            "/api/v1/foodmapservice/foodstores/welcome": {
+                "name": "/api/v1/foodmapservice/foodstores/welcome",
+                "path": "::/api/v1/foodmapservice/foodstores/welcome",
+                "id": "f90844ee12aaf997c7e21c4996912f59",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/foodmapservice/foodstores/welcome::GET OK",
+                            "id": "95757cb29e71e1b86bf6a23090dd28cf",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/foodmapservice/trainfoods/welcome": {
+                "name": "/api/v1/foodmapservice/trainfoods/welcome",
+                "path": "::/api/v1/foodmapservice/trainfoods/welcome",
+                "id": "5bd08b03ecf35618ae454583ab64e4e6",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/foodmapservice/trainfoods/welcome::GET OK",
+                            "id": "ba35e25cfd22b8498fe418c2911ed60f"
+                        }
+                    }
+            },
+            "/api/v1/foodmapservice/foodstores/{stationId}": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/foodmapservice/foodstores/{stationId}::GET OK",
+                            "id": "ead1573fb96655d21c51cfb76fe3af22",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    },
+                "name": "/api/v1/foodmapservice/foodstores/{stationId}",
+                "path": "::/api/v1/foodmapservice/foodstores/{stationId}",
+                "id": "9dd8b245f4f2cd3ff9517588a6e40361"
+            },
+            "/api/v1/foodservice/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/foodservice/welcome::GET OK",
+                            "id": "1e253457b3778836675f98d3fedb23f9",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/foodservice/welcome",
+                "path": "::/api/v1/foodservice/welcome",
+                "id": "68519b58a33454f5c9fafd0427b6d400"
+            },
+            "/api/v1/foodservice/orders/{orderId}": {
+                "name": "/api/v1/foodservice/orders/{orderId}",
+                "path": "::/api/v1/foodservice/orders/{orderId}",
+                "id": "8b6c96e8b6200585267bf9ac3e205dbf",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/foodservice/orders/{orderId}::GET OK",
+                            "id": "456464590823d0bd56f1f27eca4e6334",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/foodservice/orders/{orderId}::DELETE OK",
+                            "id": "94a39fd7c6bd306b36dd26ec76d48df0",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/foodservice/orders": {
+                "name": "/api/v1/foodservice/orders",
+                "path": "::/api/v1/foodservice/orders",
+                "id": "77a8d778cb1decccc2173127bf84dc22",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/foodservice/orders::GET OK",
+                            "id": "2c173935a9b2b0b9359c4cd7eedcbd12",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/foodservice/orders::POST OK",
+                            "id": "058fb77b69f4348a13878bf846cfd7c0",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/foodservice/foods/{date}/{startStation}/{endStation}/{tripId}": {
+                "name": "/api/v1/foodservice/foods/{date}/{startStation}/{endStation}/{tripId}",
+                "path": "::/api/v1/foodservice/foods/{date}/{startStation}/{endStation}/{tripId}",
+                "id": "c46e07bf0ee49ecdac818830c0bc7bbd",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/foodservice/foods/{date}/{startStation}/{endStation}/{tripId}::GET OK",
+                            "id": "4bf4e94552c0a9d10e30dcf2d2ca6049",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/inside_pay_service/inside_payment/money": {
+                "name": "/api/v1/inside_pay_service/inside_payment/money",
+                "path": "::/api/v1/inside_pay_service/inside_payment/money",
+                "id": "87a5bdf51c9b9d9091b7656290356559",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/inside_pay_service/inside_payment/money::GET OK",
+                            "id": "ef9544b616ed5fce6fb7f86884466950",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/inside_pay_service/inside_payment/drawback/{userId}/{money}": {
+                "checks": {
+                    "GET OK": {
+                        "name": "GET OK",
+                        "path": "::/api/v1/inside_pay_service/inside_payment/drawback/{userId}/{money}::GET OK",
+                        "id": "bf59efc68420baa35153423666e6624c",
+                        "passes": 690,
+                        "fails": 0
+                    }
+                },
+                "name": "/api/v1/inside_pay_service/inside_payment/drawback/{userId}/{money}",
+                "path": "::/api/v1/inside_pay_service/inside_payment/drawback/{userId}/{money}",
+                "id": "576477e9f5c41ea6098be791856855d3",
+                "groups": {}
+            },
+            "/api/v1/inside_pay_service/welcome": {
+                "checks": {
+                    "GET OK": {
+                        "name": "GET OK",
+                        "path": "::/api/v1/inside_pay_service/welcome::GET OK",
+                        "id": "b27359a3b396716068a42818dfc72c74",
+                        "passes": 690,
+                        "fails": 0
+                    }
+                },
+                "name": "/api/v1/inside_pay_service/welcome",
+                "path": "::/api/v1/inside_pay_service/welcome",
+                "id": "b9cba48084426d4a5837c7c905d32b02",
+                "groups": {}
+            },
+            "/api/v1/inside_pay_service/inside_payment/{userId}/{money}": {
+                "name": "/api/v1/inside_pay_service/inside_payment/{userId}/{money}",
+                "path": "::/api/v1/inside_pay_service/inside_payment/{userId}/{money}",
+                "id": "9e8a1c0f8dd974a6be689ce7da695433",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/inside_pay_service/inside_payment/{userId}/{money}::GET OK",
+                            "id": "fa98459b23cef6cd821ae7d45c0fd6f1",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/inside_pay_service/inside_payment/account": {
+                "name": "/api/v1/inside_pay_service/inside_payment/account",
+                "path": "::/api/v1/inside_pay_service/inside_payment/account",
+                "id": "338f29e792227435758dba38b0bad11a",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/inside_pay_service/inside_payment/account::GET OK",
+                            "id": "03fd54a780dee1501bc219b2c0a14c1b",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/inside_pay_service/inside_payment/account::POST OK",
+                            "id": "fb4a597988ae4500a074c2f56ae6087c"
+                        }
+                    }
+            },
+            "/api/v1/inside_pay_service/inside_payment/payment": {
+                "checks": {
+                    "GET OK": {
+                        "path": "::/api/v1/inside_pay_service/inside_payment/payment::GET OK",
+                        "id": "012e013036261cd74ec5320100afece7",
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK"
+                    }
+                },
+                "name": "/api/v1/inside_pay_service/inside_payment/payment",
+                "path": "::/api/v1/inside_pay_service/inside_payment/payment",
+                "id": "d1f03e0790951b223ee6ca877388cc5d",
+                "groups": {}
+            },
+            "/api/v1/inside_pay_service/inside_payment": {
+                "path": "::/api/v1/inside_pay_service/inside_payment",
+                "id": "549f6acb55bbf364b1a407150720dccd",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "path": "::/api/v1/inside_pay_service/inside_payment::POST OK",
+                            "id": "3c1990ec11846569533f1395e99e51b5",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    },
+                "name": "/api/v1/inside_pay_service/inside_payment"
+            },
+            "/api/v1/inside_pay_service/inside_payment/difference": {
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/inside_pay_service/inside_payment/difference::POST OK",
+                            "id": "a84e786e7bee1afb7db5e27fd10b25f9",
+                            "passes": 690
+                        }
+                    },
+                "name": "/api/v1/inside_pay_service/inside_payment/difference",
+                "path": "::/api/v1/inside_pay_service/inside_payment/difference",
+                "id": "ab0873c5d3aa964342c41b9a6a6d3c08"
+            },
+            "/api/v1/notifyservice/notification/order_cancel_success": {
+                "name": "/api/v1/notifyservice/notification/order_cancel_success",
+                "path": "::/api/v1/notifyservice/notification/order_cancel_success",
+                "id": "dcf68c6c31d0aeb37b18c9be8264dde5",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/notifyservice/notification/order_cancel_success::POST OK",
+                            "id": "ebbf70e9247b4186b91554462d6db185",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/notifyservice/welcome": {
+                "path": "::/api/v1/notifyservice/welcome",
+                "id": "a6d2643b2f9bde16d8c18c361ecef71d",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "id": "d4e04ddfe2c7f9e1c92670cd013daed5",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/notifyservice/welcome::GET OK"
+                        }
+                    },
+                "name": "/api/v1/notifyservice/welcome"
+            },
+            "/api/v1/notifyservice/notification/order_create_success": {
+                "name": "/api/v1/notifyservice/notification/order_create_success",
+                "path": "::/api/v1/notifyservice/notification/order_create_success",
+                "id": "b36884c59daf91a279e0f337f43dcacd",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/notifyservice/notification/order_create_success::POST OK",
+                            "id": "0080db420739e5875cb8fa05d2a33953"
+                        }
+                    }
+            },
+            "/api/v1/notifyservice/notification/order_changed_success": {
+                "id": "ddaef54534772c6e04986b9a77f56c05",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "id": "bf0fcacbcb62ca59081ee6eb76c03ced",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/notifyservice/notification/order_changed_success::POST OK"
+                        }
+                    },
+                "name": "/api/v1/notifyservice/notification/order_changed_success",
+                "path": "::/api/v1/notifyservice/notification/order_changed_success"
+            },
+            "/api/v1/notifyservice/notification/preserve_success": {
+                "checks": {
+                    "POST OK": {
+                        "fails": 0,
+                        "name": "POST OK",
+                        "path": "::/api/v1/notifyservice/notification/preserve_success::POST OK",
+                        "id": "3cd038e1b1f6076d05be60d0869b42fd",
+                        "passes": 690
+                    }
+                },
+                "name": "/api/v1/notifyservice/notification/preserve_success",
+                "path": "::/api/v1/notifyservice/notification/preserve_success",
+                "id": "3db695b3a8adc105547db011b3ccf051",
+                "groups": {}
+            },
+            "/api/v1/orderOtherService/orderOther/orderPay/{orderId}": {
+                "name": "/api/v1/orderOtherService/orderOther/orderPay/{orderId}",
+                "path": "::/api/v1/orderOtherService/orderOther/orderPay/{orderId}",
+                "id": "cf6a501ec50564010d49d6b18da9bb70",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "id": "7054f7ef3e7a8dc399c89fa109b0ed42",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderOtherService/orderOther/orderPay/{orderId}::GET OK"
+                        }
+                    }
+            },
+            "/api/v1/orderOtherService/orderOther/tickets": {
+                "path": "::/api/v1/orderOtherService/orderOther/tickets",
+                "id": "90360d9ab3db9b981c60c84db5c7d0fc",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/orderOtherService/orderOther/tickets::POST OK",
+                            "id": "8e11509ea05182c48384733b6cb328e0",
+                            "passes": 2,
+                            "fails": 688
+                        }
+                    },
+                "name": "/api/v1/orderOtherService/orderOther/tickets"
+            },
+            "/api/v1/orderOtherService/orderOther/status/{orderId}/{status}": {
+                "checks": {
+                    "GET OK": {
+                        "name": "GET OK",
+                        "path": "::/api/v1/orderOtherService/orderOther/status/{orderId}/{status}::GET OK",
+                        "id": "860f4d4fd392ea1ff77b7ce2860056c7",
+                        "passes": 690,
+                        "fails": 0
+                    }
+                },
+                "name": "/api/v1/orderOtherService/orderOther/status/{orderId}/{status}",
+                "path": "::/api/v1/orderOtherService/orderOther/status/{orderId}/{status}",
+                "id": "4db7258d67b4d6b1410a77ea1968b219",
+                "groups": {}
+            },
+            "/api/v1/orderOtherService/orderOther/{orderId}": {
+                "name": "/api/v1/orderOtherService/orderOther/{orderId}",
+                "path": "::/api/v1/orderOtherService/orderOther/{orderId}",
+                "id": "84f739fa307856be826e58681637baef",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderOtherService/orderOther/{orderId}::GET OK",
+                            "id": "50354ac05fdc6fa8b5a3fd76400e65b8",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "DELETE OK": {
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/orderOtherService/orderOther/{orderId}::DELETE OK",
+                            "id": "f6ce41f46d4b49affef115f4df38a934",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/orderOtherService/welcome": {
+                "name": "/api/v1/orderOtherService/welcome",
+                "path": "::/api/v1/orderOtherService/welcome",
+                "id": "86d413750f86091a5fa08db79e41cf44",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderOtherService/welcome::GET OK",
+                            "id": "34c7e21e479d7f2bd869f018dbbfbd42",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/orderOtherService/orderOther/refresh": {
+                "name": "/api/v1/orderOtherService/orderOther/refresh",
+                "path": "::/api/v1/orderOtherService/orderOther/refresh",
+                "id": "5baccd71d96de05ffba5ceed56cd1407",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "path": "::/api/v1/orderOtherService/orderOther/refresh::POST OK",
+                            "id": "65eae2b8c430ab365714a1cbd961f774",
+                            "passes": 0,
+                            "fails": 690,
+                            "name": "POST OK"
+                        }
+                    }
+            },
+            "/api/v1/orderOtherService/orderOther/security/{checkDate}/{accountId}": {
+                "checks": {
+                    "GET OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/orderOtherService/orderOther/security/{checkDate}/{accountId}::GET OK",
+                        "id": "a3400f5ca84af188db92ce41ed46c373"
+                    }
+                },
+                "name": "/api/v1/orderOtherService/orderOther/security/{checkDate}/{accountId}",
+                "path": "::/api/v1/orderOtherService/orderOther/security/{checkDate}/{accountId}",
+                "id": "5a89692250f97504958b60f0237131ca",
+                "groups": {}
+            },
+            "/api/v1/orderOtherService/orderOther/query": {
+                "name": "/api/v1/orderOtherService/orderOther/query",
+                "path": "::/api/v1/orderOtherService/orderOther/query",
+                "id": "dea27f74e664cbe2cac349d83477989d",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/orderOtherService/orderOther/query::POST OK",
+                            "id": "1b9051c0608400cd9d88a5dbf42dd2e4",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/orderOtherService/orderOther/{travelDate}/{trainNumber}": {
+                "name": "/api/v1/orderOtherService/orderOther/{travelDate}/{trainNumber}",
+                "path": "::/api/v1/orderOtherService/orderOther/{travelDate}/{trainNumber}",
+                "id": "bd95c394711807ced8f80dba8897e8df",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderOtherService/orderOther/{travelDate}/{trainNumber}::GET OK",
+                            "id": "de4674dfd6316eea2b4a4b3fc8931f67",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/orderOtherService/orderOther/admin": {
+                "checks": {
+                    "PUT OK": {
+                        "name": "PUT OK",
+                        "path": "::/api/v1/orderOtherService/orderOther/admin::PUT OK",
+                        "id": "ab601fd4bb0b6b29e67d3a7167fbb232",
+                        "passes": 690,
+                        "fails": 0
+                    },
+                    "POST OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "POST OK",
+                        "path": "::/api/v1/orderOtherService/orderOther/admin::POST OK",
+                        "id": "538b8ef1320d81e2cd8921a48595b805"
+                    }
+                },
+                "name": "/api/v1/orderOtherService/orderOther/admin",
+                "path": "::/api/v1/orderOtherService/orderOther/admin",
+                "id": "75dee324a036e1cac91617604f61c110",
+                "groups": {}
+            },
+            "/api/v1/orderOtherService/orderOther": {
+                "path": "::/api/v1/orderOtherService/orderOther",
+                "id": "b61e63c491cac1d918d02dae0fcf8eab",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/orderOtherService/orderOther::GET OK",
+                            "id": "b15abf482c9a3a64037717eccb7f7c22",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        },
+                        "POST OK": {
+                            "path": "::/api/v1/orderOtherService/orderOther::POST OK",
+                            "id": "830817f132da6fff23a2dc30d3fbdc5f",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    },
+                "name": "/api/v1/orderOtherService/orderOther"
+            },
+            "/api/v1/orderOtherService/orderOther/price/{orderId}": {
+                "checks": {
+                    "GET OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/orderOtherService/orderOther/price/{orderId}::GET OK",
+                        "id": "4705cefa8d71bd9a9539f45a0c8969c0"
+                    }
+                },
+                "name": "/api/v1/orderOtherService/orderOther/price/{orderId}",
+                "path": "::/api/v1/orderOtherService/orderOther/price/{orderId}",
+                "id": "0e48f212fd7e9f590c57912af7a530e9",
+                "groups": {}
+            },
+            "/api/v1/orderservice/order/tickets": {
+                "checks": {
+                    "POST OK": {
+                        "fails": 0,
+                        "name": "POST OK",
+                        "path": "::/api/v1/orderservice/order/tickets::POST OK",
+                        "id": "f5a7ffb0106fafa6eeefdb0e9c755c98",
+                        "passes": 690
+                    }
+                },
+                "name": "/api/v1/orderservice/order/tickets",
+                "path": "::/api/v1/orderservice/order/tickets",
+                "id": "ac446596825f85fd6dce52f76d470ff6",
+                "groups": {}
+            },
+            "/api/v1/orderservice/order/admin": {
+                "name": "/api/v1/orderservice/order/admin",
+                "path": "::/api/v1/orderservice/order/admin",
+                "id": "3c47cb8a0d9abcc734c08ab84023eb89",
+                "groups": {},
+                "checks": {
+                        "OK": {
+                            "name": "OK",
+                            "path": "::/api/v1/orderservice/order/admin::OK",
+                            "id": "5214aa488d4787cc5e198a085ea0e995",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/orderservice/order/admin::POST OK",
+                            "id": "f9b7fc794bb9a5e608e3d4861e5cd320"
+                        }
+                    }
+            },
+            "/api/v1/orderservice/order/query": {
+                "name": "/api/v1/orderservice/order/query",
+                "path": "::/api/v1/orderservice/order/query",
+                "id": "ce749343333dfaac7a455ac2c21933bc",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "path": "::/api/v1/orderservice/order/query::POST OK",
+                            "id": "f059918bbf17eea8a081a91b18d27e86",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    }
+            },
+            "/api/v1/orderservice/order/{travelDate}/{trainNumber}": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderservice/order/{travelDate}/{trainNumber}::GET OK",
+                            "id": "9de03e1f7dd5aac44d4689e42dece1fc",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/orderservice/order/{travelDate}/{trainNumber}",
+                "path": "::/api/v1/orderservice/order/{travelDate}/{trainNumber}",
+                "id": "27c5f2f17fe96c5a43952ce6a66137ad"
+            },
+            "/api/v1/orderservice/order/status/{orderId}/{status}": {
+                "id": "7b1733f0d7810bef1e8937e55aa2ae3a",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/orderservice/order/status/{orderId}/{status}::GET OK",
+                            "id": "95ab7c28a2bed55941284643ed569e32",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    },
+                "name": "/api/v1/orderservice/order/status/{orderId}/{status}",
+                "path": "::/api/v1/orderservice/order/status/{orderId}/{status}"
+            },
+            "/api/v1/orderservice/order": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderservice/order::GET OK",
+                            "id": "1ee3c15349abfd5910ff90041634ded3"
+                        },
+                        "POST OK": {
+                            "id": "e2123fac8f071386cc653da6931ca23b",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/orderservice/order::POST OK"
+                        }
+                    },
+                "name": "/api/v1/orderservice/order",
+                "path": "::/api/v1/orderservice/order",
+                "id": "1bffe8109a8c7cde37662ed01463768c"
+            },
+            "/api/v1/orderservice/order/refresh": {
+                "path": "::/api/v1/orderservice/order/refresh",
+                "id": "a47eb284f5d04deffd91f23190b3f79b",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/orderservice/order/refresh::POST OK",
+                            "id": "4fb764d30f46ec1269d59d6d060708fa",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    },
+                "name": "/api/v1/orderservice/order/refresh"
+            },
+            "/api/v1/orderservice/order/{orderId}": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderservice/order/{orderId}::GET OK",
+                            "id": "cc2eae369bc9d7ebadee775d4b1a9b17",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "DELETE OK": {
+                            "id": "c5f96afaca9d39110dc0e5d2c94c99e8",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/orderservice/order/{orderId}::DELETE OK"
+                        }
+                    },
+                "name": "/api/v1/orderservice/order/{orderId}",
+                "path": "::/api/v1/orderservice/order/{orderId}",
+                "id": "9f817d9954405888233d3a7420fe7c7c"
+            },
+            "/api/v1/orderservice/order/security/{checkDate}/{accountId}": {
+                "name": "/api/v1/orderservice/order/security/{checkDate}/{accountId}",
+                "path": "::/api/v1/orderservice/order/security/{checkDate}/{accountId}",
+                "id": "f615e03b430288d735a9599c3ad0e00d",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/orderservice/order/security/{checkDate}/{accountId}::GET OK",
+                            "id": "9c4c8d1c6c6aef2b2843fc5798da5f13",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/orderservice/order/orderPay/{orderId}": {
+                "name": "/api/v1/orderservice/order/orderPay/{orderId}",
+                "path": "::/api/v1/orderservice/order/orderPay/{orderId}",
+                "id": "610f6bf79977f1d4ec0950b0ad702838",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderservice/order/orderPay/{orderId}::GET OK",
+                            "id": "12f057010a955373f33deeb8c8ceee1f",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/orderservice/welcome": {
+                "id": "311bcd0dff907212414db2128b229c24",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderservice/welcome::GET OK",
+                            "id": "50f48e29ba852f57b519e4239508a722",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/orderservice/welcome",
+                "path": "::/api/v1/orderservice/welcome"
+            },
+            "/api/v1/orderservice/order/price/{orderId}": {
+                "name": "/api/v1/orderservice/order/price/{orderId}",
+                "path": "::/api/v1/orderservice/order/price/{orderId}",
+                "id": "3aa1c9fc35f30e3a03126bc934a6e5d6",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/orderservice/order/price/{orderId}::GET OK",
+                            "id": "915cc1ba3decd3543ec995fae2b57e7c",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/paymentservice/payment/money": {
+                "checks": {
+                    "POST OK": {
+                        "name": "POST OK",
+                        "path": "::/api/v1/paymentservice/payment/money::POST OK",
+                        "id": "809568465d694a04ab2f3936dc5c0115",
+                        "passes": 690,
+                        "fails": 0
+                    }
+                },
+                "name": "/api/v1/paymentservice/payment/money",
+                "path": "::/api/v1/paymentservice/payment/money",
+                "id": "6b343e9e38f2aedd6fe2dc79269d8727",
+                "groups": {}
+            },
+            "/api/v1/paymentservice/payment": {
+                "path": "::/api/v1/paymentservice/payment",
+                "id": "5957c0855111f02e8c7194ed0d02e2fa",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/paymentservice/payment::GET OK",
+                            "id": "682d65cec4f0751ac9d633486d7791f9",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "id": "f0cf44fd30c87f9f57235bcf93cd6933",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/paymentservice/payment::POST OK"
+                        }
+                    },
+                "name": "/api/v1/paymentservice/payment"
+            },
+            "/api/v1/paymentservice/welcome": {
+                "name": "/api/v1/paymentservice/welcome",
+                "path": "::/api/v1/paymentservice/welcome",
+                "id": "579ccc68deb6a15f6e6235248e424c72",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/paymentservice/welcome::GET OK",
+                            "id": "ba4b352023bc924260471f0a9454876c",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/preserveotherservice/welcome": {
+                "name": "/api/v1/preserveotherservice/welcome",
+                "path": "::/api/v1/preserveotherservice/welcome",
+                "id": "64311c7041b7cafa07710e0ffc5fdb20",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/preserveotherservice/welcome::GET OK",
+                            "id": "1a594cc0304b88a32070de60273ab45a",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/preserveotherservice/preserveOther": {
+                "checks": {
+                    "POST OK": {
+                        "fails": 0,
+                        "name": "POST OK",
+                        "path": "::/api/v1/preserveotherservice/preserveOther::POST OK",
+                        "id": "17c01d965330c9f5cb5df8b08a7df2e6",
+                        "passes": 690
+                    }
+                },
+                "name": "/api/v1/preserveotherservice/preserveOther",
+                "path": "::/api/v1/preserveotherservice/preserveOther",
+                "id": "77938dda16086ef5b7b27ce4f65e220e",
+                "groups": {}
+            },
+            "/api/v1/preserveservice/preserve": {
+                "id": "ca52250a1f095e35f3a48797d5521818",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/preserveservice/preserve::POST OK",
+                            "id": "f4f4281b2f141bac64947a71ac733d0a",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/preserveservice/preserve",
+                "path": "::/api/v1/preserveservice/preserve"
+            },
+            "/api/v1/preserveservice/welcome": {
+                "name": "/api/v1/preserveservice/welcome",
+                "path": "::/api/v1/preserveservice/welcome",
+                "id": "b2e4488560e56fcbc2a30aa390bd1244",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/preserveservice/welcome::GET OK",
+                            "id": "cd2d8d9e705d3bed2aeaa34ccd5a4685",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/priceservice/prices/{routeId}/{trainType}": {
+                "name": "/api/v1/priceservice/prices/{routeId}/{trainType}",
+                "path": "::/api/v1/priceservice/prices/{routeId}/{trainType}",
+                "id": "2d36ab47aca92c675644dd1b2ec7346f",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/priceservice/prices/{routeId}/{trainType}::GET OK",
+                            "id": "d9f136ddf57d7dc2adbb613f56c0939f",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/priceservice/prices": {
+                "path": "::/api/v1/priceservice/prices",
+                "id": "be9c811236641f4ad50c1e4ab104442c",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/priceservice/prices::GET OK",
+                            "id": "98da6f77e6b232fb3395552f4159962f"
+                        },
+                        "DELETE OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/priceservice/prices::DELETE OK",
+                            "id": "18654fb02ddbebcb28513565dc6981d6"
+                        }
+                    },
+                "name": "/api/v1/priceservice/prices"
+            },
+            "/api/v1/priceservice/prices/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/priceservice/prices/welcome::GET OK",
+                            "id": "0101f1c977a06547fb9386a018fcd327",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    },
+                "name": "/api/v1/priceservice/prices/welcome",
+                "path": "::/api/v1/priceservice/prices/welcome",
+                "id": "aeb83ab84a07c93b07d04bae8c9f1e84"
+            },
+            "/api/v1/rebookservice/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/rebookservice/welcome::GET OK",
+                            "id": "a5f6cbb778305a4b1ebfb83ab23079c1",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/rebookservice/welcome",
+                "path": "::/api/v1/rebookservice/welcome",
+                "id": "c655ba19b9401386973bca33d7ee7461"
+            },
+            "/api/v1/rebookservice/rebook/difference": {
+                "name": "/api/v1/rebookservice/rebook/difference",
+                "path": "::/api/v1/rebookservice/rebook/difference",
+                "id": "5284225ec5f0a7e75b1662d2e9df0660",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "path": "::/api/v1/rebookservice/rebook/difference::POST OK",
+                            "id": "e0626a194e23862f62bdbd0f485903e1",
+                            "passes": 0,
+                            "fails": 690,
+                            "name": "POST OK"
+                        }
+                    }
+            },
+            "/api/v1/rebookservice/rebook": {
+                "id": "98819bce7b0986e5e14d00d3eccd0fbb",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/rebookservice/rebook::POST OK",
+                            "id": "b787b171adbe163a610ff84f1baf01f0",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/rebookservice/rebook",
+                "path": "::/api/v1/rebookservice/rebook"
+            },
+            "/api/v1/routeplanservice/routePlan/quickestRoute": {
+                "path": "::/api/v1/routeplanservice/routePlan/quickestRoute",
+                "id": "e4b2226dcfa0d9df3a469dc646f6fbb8",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/routeplanservice/routePlan/quickestRoute::POST OK",
+                            "id": "15a34caf3f42579ac5fea10751021c8e"
+                        }
+                    },
+                "name": "/api/v1/routeplanservice/routePlan/quickestRoute"
+            },
+            "/api/v1/routeplanservice/routePlan/minStopStations": {
+                "name": "/api/v1/routeplanservice/routePlan/minStopStations",
+                "path": "::/api/v1/routeplanservice/routePlan/minStopStations",
+                "id": "4b606f52092a1c8d754ff16add8283bb",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/routeplanservice/routePlan/minStopStations::POST OK",
+                            "id": "aac7e6a9443cc3212d0a1f37ce657cc4",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    }
+            },
+            "/api/v1/routeplanservice/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/routeplanservice/welcome::GET OK",
+                            "id": "9e2540cb8ff2e35bad2bc3987956a3b5"
+                        }
+                    },
+                "name": "/api/v1/routeplanservice/welcome",
+                "path": "::/api/v1/routeplanservice/welcome",
+                "id": "ac8f8fcf895d1af1b292ae476612d21f"
+            },
+            "/api/v1/routeplanservice/routePlan/cheapestRoute": {
+                "name": "/api/v1/routeplanservice/routePlan/cheapestRoute",
+                "path": "::/api/v1/routeplanservice/routePlan/cheapestRoute",
+                "id": "bb10e42fe92e9a8f5afaefca183f0895",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/routeplanservice/routePlan/cheapestRoute::POST OK",
+                            "id": "891041e41bbe6a5501c444e32f53fd39",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/routeservice/routes": {
+                "name": "/api/v1/routeservice/routes",
+                "path": "::/api/v1/routeservice/routes",
+                "id": "dd7206eefe1be83aae56f176212768cc",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/routeservice/routes::GET OK",
+                            "id": "3156cbc12f801927ceef2c21a2102ca1",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "path": "::/api/v1/routeservice/routes::POST OK",
+                            "id": "d0d0da1f7b92a285ca47ea95710b2105",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    }
+            },
+            "/api/v1/routeservice/routes/{startId}/{terminalId}": {
+                "name": "/api/v1/routeservice/routes/{startId}/{terminalId}",
+                "path": "::/api/v1/routeservice/routes/{startId}/{terminalId}",
+                "id": "1f9b3b065563328b3b128bc9f8d06c81",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/routeservice/routes/{startId}/{terminalId}::GET OK",
+                            "id": "05b7bfe8b1891a9b0d08f3308b908588",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/routeservice/welcome": {
+                "name": "/api/v1/routeservice/welcome",
+                "path": "::/api/v1/routeservice/welcome",
+                "id": "eff100a2c3b095574c1a98eed68008be",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/routeservice/welcome::GET OK",
+                            "id": "4d9afbcc20fde20748d2df2a36609c54"
+                        }
+                    }
+            },
+            "/api/v1/routeservice/routes/{routeId}": {
+                "id": "6b23bc6db35af0a41ac34b6cd6c4c730",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/routeservice/routes/{routeId}::GET OK",
+                            "id": "8046404f2842cf1f8f6a82410aacc69d",
+                            "passes": 690
+                        },
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/routeservice/routes/{routeId}::DELETE OK",
+                            "id": "62d23e29bcf18d022707da81b9671baf",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/routeservice/routes/{routeId}",
+                "path": "::/api/v1/routeservice/routes/{routeId}"
+            },
+            "/api/v1/seatservice/seats": {
+                "id": "dd7988ddfa74a1a2e4eb58231627017d",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/seatservice/seats::POST OK",
+                            "id": "dbe26ed5d000aa4f46b6416886a4fad9",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    },
+                "name": "/api/v1/seatservice/seats",
+                "path": "::/api/v1/seatservice/seats"
+            },
+            "/api/v1/seatservice/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/seatservice/welcome::GET OK",
+                            "id": "aa1bdf3b703cbbc82011c56b3704c519"
+                        }
+                    },
+                "name": "/api/v1/seatservice/welcome",
+                "path": "::/api/v1/seatservice/welcome",
+                "id": "f4ccb858da38169b7fb84d8b61041bf3"
+            },
+            "/api/v1/seatservice/seats/left_tickets": {
+                "name": "/api/v1/seatservice/seats/left_tickets",
+                "path": "::/api/v1/seatservice/seats/left_tickets",
+                "id": "15069e2c6fa9877063721443623b6353",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/seatservice/seats/left_tickets::POST OK",
+                            "id": "7fc607fb1481f6d7ee898a988240930c",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    }
+            },
+            "/api/v1/securityservice/securityConfigs": {
+                "id": "406cf1b8b552c4406f8a378bf8354cd7",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/securityservice/securityConfigs::GET OK",
+                            "id": "18032dac4d00c1340a50f3cdc92cf2c0",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "path": "::/api/v1/securityservice/securityConfigs::POST OK",
+                            "id": "a4a72c1fd8b2b4c3d3789c34e79389e6",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK"
+                        }
+                    },
+                "name": "/api/v1/securityservice/securityConfigs",
+                "path": "::/api/v1/securityservice/securityConfigs"
+            },
+            "/api/v1/securityservice/welcome": {
+                "id": "c898ecde74547ebde2a8adcb284ceb7c",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/securityservice/welcome::GET OK",
+                            "id": "62405296aef8e24db09aece599fd989d",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    },
+                "name": "/api/v1/securityservice/welcome",
+                "path": "::/api/v1/securityservice/welcome"
+            },
+            "/api/v1/securityservice/securityConfigs/{accountId}": {
+                "checks": {
+                    "GET OK": {
+                        "path": "::/api/v1/securityservice/securityConfigs/{accountId}::GET OK",
+                        "id": "0f1586e90d80116aa40574e0622ccda4",
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK"
+                    }
+                },
+                "name": "/api/v1/securityservice/securityConfigs/{accountId}",
+                "path": "::/api/v1/securityservice/securityConfigs/{accountId}",
+                "id": "5ee658e76dd660e541c3a889f1507715",
+                "groups": {}
+            },
+            "/api/v1/securityservice/securityConfigs/{id}": {
+                "groups": {},
+                "checks": {
+                        "DELETE OK": {
+                            "path": "::/api/v1/securityservice/securityConfigs/{id}::DELETE OK",
+                            "id": "ef5250e7ed9698f1890d751c9d54ff05",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "DELETE OK"
+                        }
+                    },
+                "name": "/api/v1/securityservice/securityConfigs/{id}",
+                "path": "::/api/v1/securityservice/securityConfigs/{id}",
+                "id": "e066a453f073e87c4afc1d6c8e8a3566"
+            },
+            "/api/v1/stationservice/welcome": {
+                "path": "::/api/v1/stationservice/welcome",
+                "id": "65ef01b8ac539b6d4030382cd9c538f6",
+                "groups": {},
+                "checks": {
+                        "Welcome OK": {
+                            "name": "Welcome OK",
+                            "path": "::/api/v1/stationservice/welcome::Welcome OK",
+                            "id": "d03f2781aed3033bcad13271ab38780c",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/stationservice/welcome"
+            },
+            "/api/v1/stationservice/stations/id/{stationNameForId}": {
+                "name": "/api/v1/stationservice/stations/id/{stationNameForId}",
+                "path": "::/api/v1/stationservice/stations/id/{stationNameForId}",
+                "id": "1635f972e59ea4a1500dc882a2ebee7b",
+                "groups": {},
+                "checks": {
+                        "Station was retrieved correctly": {
+                            "name": "Station was retrieved correctly",
+                            "path": "::/api/v1/stationservice/stations/id/{stationNameForId}::Station was retrieved correctly",
+                            "id": "937a623680272f222dfad1973742113a",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/stationservice/stations": {
+                "groups": {},
+                "checks": {
+                        "Stations were retrieved correctly": {
+                            "name": "Stations were retrieved correctly",
+                            "path": "::/api/v1/stationservice/stations::Stations were retrieved correctly",
+                            "id": "e6a5df18b3969c3055447bc77a3c9680",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "Station was deleted correctly": {
+                            "name": "Station was deleted correctly",
+                            "path": "::/api/v1/stationservice/stations::Station was deleted correctly",
+                            "id": "d3e718739f1d88c19a9fbaf8cfaf6caf",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/stationservice/stations",
+                "path": "::/api/v1/stationservice/stations",
+                "id": "302f2c710c7dd5db4fe85847c42d1684"
+            },
+            "/api/v1/ticketinfoservice/ticketinfo/{name}": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "id": "e28745dc4979496276445b00d30b731e",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/ticketinfoservice/ticketinfo/{name}::GET OK"
+                        }
+                    },
+                "name": "/api/v1/ticketinfoservice/ticketinfo/{name}",
+                "path": "::/api/v1/ticketinfoservice/ticketinfo/{name}",
+                "id": "37ce36feb4672cc74f87ed828c81ff4d"
+            },
+            "/api/v1/ticketinfoservice/welcome": {
+                "checks": {
+                    "GET OK": {
+                        "path": "::/api/v1/ticketinfoservice/welcome::GET OK",
+                        "id": "e7536bddd02a82c422ba20c935761198",
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK"
+                    }
+                },
+                "name": "/api/v1/ticketinfoservice/welcome",
+                "path": "::/api/v1/ticketinfoservice/welcome",
+                "id": "dd589061de9b6e6db0aa2ee9bac9877a",
+                "groups": {}
+            },
+            "/api/v1/ticketinfoservice/ticketinfo": {
+                "id": "27e01576b249d65ff0c3ee5b12703bd9",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/ticketinfoservice/ticketinfo::POST OK",
+                            "id": "402879880cae6da659c837ddb6898ce0",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    },
+                "name": "/api/v1/ticketinfoservice/ticketinfo",
+                "path": "::/api/v1/ticketinfoservice/ticketinfo"
+            },
+            "/api/v1/trainservice/trains/{id}": {
+                "checks": {
+                    "GET OK": {
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/trainservice/trains/{id}::GET OK",
+                        "id": "af052a59143f03e81654d05494cfc2c1",
+                        "passes": 690
+                    },
+                    "DELETE OK": {
+                        "name": "DELETE OK",
+                        "path": "::/api/v1/trainservice/trains/{id}::DELETE OK",
+                        "id": "f4fb19e81011086de02da969bafacbbd",
+                        "passes": 690,
+                        "fails": 0
+                    }
+                },
+                "name": "/api/v1/trainservice/trains/{id}",
+                "path": "::/api/v1/trainservice/trains/{id}",
+                "id": "7d621fb9e377b224d2c31e35eafac5e5",
+                "groups": {}
+            },
+            "/api/v1/trainservice/trains": {
+                "name": "/api/v1/trainservice/trains",
+                "path": "::/api/v1/trainservice/trains",
+                "id": "d1597ce1e1e378cf239ecde5358eda11",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/trainservice/trains::GET OK",
+                            "id": "8a91090a8d6725389c16372fdb30cee2",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        },
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/trainservice/trains::POST OK",
+                            "id": "38f0a65582d1f41c1e321ccaf67a8bdb",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/trainservice/trains/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/trainservice/trains/welcome::GET OK",
+                            "id": "702de28ffdb0b31918b4d57db873b421"
+                        }
+                    },
+                "name": "/api/v1/trainservice/trains/welcome",
+                "path": "::/api/v1/trainservice/trains/welcome",
+                "id": "2aabe0a4b87126bbc75fe6484ce57b06"
+            },
+            "/api/v1/travel2service/routes/{tripId}": {
+                "checks": {
+                    "GET OK": {
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK",
+                        "path": "::/api/v1/travel2service/routes/{tripId}::GET OK",
+                        "id": "0c2dc32383a32f7856ca4e44f09039d4"
+                    }
+                },
+                "name": "/api/v1/travel2service/routes/{tripId}",
+                "path": "::/api/v1/travel2service/routes/{tripId}",
+                "id": "9c4bf07511c7f5615593e4ef1ae2a8f8",
+                "groups": {}
+            },
+            "/api/v1/travel2service/trips/routes": {
+                "path": "::/api/v1/travel2service/trips/routes",
+                "id": "df11bd6a6fc249fa1dcc2ae124b7cc38",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/travel2service/trips/routes::POST OK",
+                            "id": "986595d340087e7a759bfc09d73cb2cd",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/travel2service/trips/routes"
+            },
+            "/api/v1/travel2service/welcome": {
+                "name": "/api/v1/travel2service/welcome",
+                "path": "::/api/v1/travel2service/welcome",
+                "id": "7e7ddae30e6d8f0278aea61bb1df0847",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/travel2service/welcome::GET OK",
+                            "id": "75c0a2a67e8adb8cb963b441dd816990"
+                        }
+                    }
+            },
+            "/api/v1/travel2service/trips/{tripId}": {
+                "name": "/api/v1/travel2service/trips/{tripId}",
+                "path": "::/api/v1/travel2service/trips/{tripId}",
+                "id": "483f849976035b23480fca4b6fff002f",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/travel2service/trips/{tripId}::GET OK",
+                            "id": "dccd519ecb092e56e371798a9efcea44",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/travel2service/trips/{tripId}::DELETE OK",
+                            "id": "22d50de5d1bff87058168899b4a000d7",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/travel2service/admin_trip": {
+                "name": "/api/v1/travel2service/admin_trip",
+                "path": "::/api/v1/travel2service/admin_trip",
+                "id": "d3b9b7351b73808aae30ce3d999f2596",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/travel2service/admin_trip::GET OK",
+                            "id": "99c60d6271e1b24943c917931614d9c8",
+                            "passes": 690
+                        }
+                    }
+            },
+            "/api/v1/travel2service/train_types/{tripId}": {
+                "id": "d300fa8403e5b504b95a8db32a096556",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/travel2service/train_types/{tripId}::GET OK",
+                            "id": "71f477bbf12b4fc8e977e537d8bad31c",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/travel2service/train_types/{tripId}",
+                "path": "::/api/v1/travel2service/train_types/{tripId}"
+            },
+            "/api/v1/travel2service/trip_detail": {
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/travel2service/trip_detail::POST OK",
+                            "id": "4f4872baf0779d0f9c9a161065b19027"
+                        }
+                    },
+                "name": "/api/v1/travel2service/trip_detail",
+                "path": "::/api/v1/travel2service/trip_detail",
+                "id": "bb5e3cffa864ff91fa7391b69be40844"
+            },
+            "/api/v1/travel2service/trips/left": {
+                "path": "::/api/v1/travel2service/trips/left",
+                "id": "adaefa00410adc0c7a07610050fb18b1",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/travel2service/trips/left::POST OK",
+                            "id": "27caae0d7cf6c6700b50d656a994035a"
+                        }
+                    },
+                "name": "/api/v1/travel2service/trips/left"
+            },
+            "/api/v1/travel2service/trips": {
+                "name": "/api/v1/travel2service/trips",
+                "path": "::/api/v1/travel2service/trips",
+                "id": "ee8690eea1edeaec554bc9e0b8ae9a14",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/travel2service/trips::GET OK",
+                            "id": "3b1c2b91ec479094d90677338e8413fb",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "POST OK": {
+                            "fails": 690,
+                            "name": "POST OK",
+                            "path": "::/api/v1/travel2service/trips::POST OK",
+                            "id": "46ff7e17a5e35b1d807b542cac4ac8aa",
+                            "passes": 0
+                        }
+                    }
+            },
+            "/api/v1/travelplanservice/welcome": {
+                "name": "/api/v1/travelplanservice/welcome",
+                "path": "::/api/v1/travelplanservice/welcome",
+                "id": "97a66ceb1b97f1b30e42b4ae82a4efcf",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK",
+                            "path": "::/api/v1/travelplanservice/welcome::GET OK",
+                            "id": "bcc127daef08d2dd56a140bfaef4f315"
+                        }
+                    }
+            },
+            "/api/v1/travelplanservice/travelPlan/transferResult": {
+                "id": "6078dfa04478316acba6fe628f052f58",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/travelplanservice/travelPlan/transferResult::POST OK",
+                            "id": "379948b3a5f9dc6500f85d85a390d6a7",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/travelplanservice/travelPlan/transferResult",
+                "path": "::/api/v1/travelplanservice/travelPlan/transferResult"
+            },
+            "/api/v1/travelplanservice/travelPlan/quickest": {
+                "path": "::/api/v1/travelplanservice/travelPlan/quickest",
+                "id": "42bd2e454f9dca0c61977fd2f9d716e5",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "POST OK",
+                            "path": "::/api/v1/travelplanservice/travelPlan/quickest::POST OK",
+                            "id": "98cb8d26f69760ed1045a5dd7c20adb8"
+                        }
+                    },
+                "name": "/api/v1/travelplanservice/travelPlan/quickest"
+            },
+            "/api/v1/travelplanservice/travelPlan/cheapest": {
+                "name": "/api/v1/travelplanservice/travelPlan/cheapest",
+                "path": "::/api/v1/travelplanservice/travelPlan/cheapest",
+                "id": "722a1a09dd606c0f10c9e17750f81556",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/travelplanservice/travelPlan/cheapest::POST OK",
+                            "id": "5dfc26f02268d0f4ff0adc50ab5f79d4",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/travelplanservice/travelPlan/minStation": {
+                "name": "/api/v1/travelplanservice/travelPlan/minStation",
+                "path": "::/api/v1/travelplanservice/travelPlan/minStation",
+                "id": "a18ad6ca1c6257678399fd5f54ed97f9",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/travelplanservice/travelPlan/minStation::POST OK",
+                            "id": "80fef0d72f7f195d991d1685c87b3193",
+                            "passes": 0,
+                            "fails": 690
+                        }
+                    }
+            },
+            "/api/v1/travelservice/trip_detail": {
+                "name": "/api/v1/travelservice/trip_detail",
+                "path": "::/api/v1/travelservice/trip_detail",
+                "id": "d7baa06d21800a4866e9b22b611662a0",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/travelservice/trip_detail::POST OK",
+                            "id": "bd82ccfa77431530d8b3280c70c1839d",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/travelservice/routes/{tripId}": {
+                "checks": {
+                    "GET OK": {
+                        "path": "::/api/v1/travelservice/routes/{tripId}::GET OK",
+                        "id": "c71a1bb362d795bcdb01ee83e2951f57",
+                        "passes": 690,
+                        "fails": 0,
+                        "name": "GET OK"
+                    }
+                },
+                "name": "/api/v1/travelservice/routes/{tripId}",
+                "path": "::/api/v1/travelservice/routes/{tripId}",
+                "id": "c7026f60374860e2df7be4481c466709",
+                "groups": {}
+            },
+            "/api/v1/travelservice/trips": {
+                "name": "/api/v1/travelservice/trips",
+                "path": "::/api/v1/travelservice/trips",
+                "id": "e20f048ea57862f7adda67dd6bcea2df",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/travelservice/trips::GET OK",
+                            "id": "2cb59392bbe8a85294946bef882c3c0f",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        },
+                        "POST OK": {
+                            "path": "::/api/v1/travelservice/trips::POST OK",
+                            "id": "c7ee79054ad919d23115ad89fc5ec9f5",
+                            "passes": 0,
+                            "fails": 690,
+                            "name": "POST OK"
+                        }
+                    }
+            },
+            "/api/v1/travelservice/trips/routes": {
+                "name": "/api/v1/travelservice/trips/routes",
+                "path": "::/api/v1/travelservice/trips/routes",
+                "id": "3806a0c34d193bca04e96f40f05923a4",
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/travelservice/trips/routes::POST OK",
+                            "id": "4bddba33cc9ba8241b792dd9b7768dfc",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            },
+            "/api/v1/travelservice/train_types/{tripId}": {
+                "name": "/api/v1/travelservice/train_types/{tripId}",
+                "path": "::/api/v1/travelservice/train_types/{tripId}",
+                "id": "4ecabd281627542ae89c996c826a24c8",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "path": "::/api/v1/travelservice/train_types/{tripId}::GET OK",
+                            "id": "bc135b45b430b577d74d3f4cd8d3110b",
+                            "passes": 690,
+                            "fails": 0,
+                            "name": "GET OK"
+                        }
+                    }
+            },
+            "/api/v1/travelservice/trips/{tripId}": {
+                "path": "::/api/v1/travelservice/trips/{tripId}",
+                "id": "709b99a6d167dd131cc65740386216b0",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/travelservice/trips/{tripId}::GET OK",
+                            "id": "95924a373761ee2368e44741704a91ce",
+                            "passes": 690,
+                            "fails": 0
+                        },
+                        "DELETE OK": {
+                            "name": "DELETE OK",
+                            "path": "::/api/v1/travelservice/trips/{tripId}::DELETE OK",
+                            "id": "1307d75d93c0ac9c47cd295891d240e5",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/travelservice/trips/{tripId}"
+            },
+            "/api/v1/travelservice/welcome": {
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/travelservice/welcome::GET OK",
+                            "id": "2c2ca743dabf25300c92182305510290",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/travelservice/welcome",
+                "path": "::/api/v1/travelservice/welcome",
+                "id": "1cdffef7d065adcf972ddd5051d68d1f"
+            },
+            "/api/v1/travelservice/trips/left": {
+                "groups": {},
+                "checks": {
+                        "POST OK": {
+                            "name": "POST OK",
+                            "path": "::/api/v1/travelservice/trips/left::POST OK",
+                            "id": "c21160c784dc16f560012593819a71d5",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    },
+                "name": "/api/v1/travelservice/trips/left",
+                "path": "::/api/v1/travelservice/trips/left",
+                "id": "609f2678e9dab2370c93b13086051082"
+            },
+            "/api/v1/travelservice/admin_trip": {
+                "name": "/api/v1/travelservice/admin_trip",
+                "path": "::/api/v1/travelservice/admin_trip",
+                "id": "90d62b89771ce9ff2d693a5bf2a49f0c",
+                "groups": {},
+                "checks": {
+                        "GET OK": {
+                            "name": "GET OK",
+                            "path": "::/api/v1/travelservice/admin_trip::GET OK",
+                            "id": "609b41cebe292fc3df7ea5acda842696",
+                            "passes": 690,
+                            "fails": 0
+                        }
+                    }
+            }
+        },
+        "checks": {}
+    }
+}

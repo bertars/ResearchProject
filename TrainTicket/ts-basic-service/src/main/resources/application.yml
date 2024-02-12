@@ -1,0 +1,18 @@
+server:
+  port: 15680
+
+spring:
+  application:
+    name: ts-basic-service
+
+swagger:
+  controllerPackage: fdse.microservice.controller
+
+logging:
+  file: logs/ts-basic-service.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    fdse.microservice: DEBUG
