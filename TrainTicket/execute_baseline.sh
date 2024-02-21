@@ -6,25 +6,24 @@ LOGS_EXTRACTION_TIMEOUT=10
 
 # Function to start data collection
 start_data_collection() {
-    echo "Starting data collection for $1 at $(date "+%T.%6N")"
+    echo "Starting data collection for baseline at $(date "+%T.%6N")"
     # Start Scaphandre for power monitoring
-    # scaphandre --exporter prometheus &> "logs/scaphandre_$1.log" &
-    docker run -d --name scaphandre_$1 \
+    docker run -d --name scaphandre_1 \
         -v /sys/class/powercap:/sys/class/powercap \
         -v /proc:/proc \
-        -ti hubblo/scaphandre json --containers --max-top-consumers=100 -f "logs/scaphandre_$1.log" &
+        --privileged -ti hubblo/scaphandre json --containers -f "logs/scaphandre_1.log" &
     
     # Start WattsUpPro monitoring
-    # echo python3 ../wattsuppro_logger/WattsupPro.py -l -o gl4.log -p /dev/ttyUSB2 > /dev/null 2>&1 &
+    echo python3 ../wattsuppro_logger/WattsupPro.py -l -o gl3.log -p /dev/ttyUSB1 > /dev/null 2>&1 &
 
     
 }
 
 stop_data_collection() {
     echo "Stopping data collection at $(date "+%T.%6N")"
-    docker stop scaphandre_$1
-    # killall scaphandre
-    # pkill -f ../wattsuppro_logger-main/WattsupPro.py
+    docker stop scaphandre_1
+    docker rm scaphandre_1
+    pkill -f ../wattsuppro_logger-main/WattsupPro.py
 }
 
 mkdir -p logs
@@ -37,9 +36,11 @@ sleep $CONTAINER_START_TIMEOUT
 echo "Services started!"
 
 executionStartTime=$(date "+%T.%6N")
-echo "Running baseline 1 at $(date "+%T.%6N")"
+echo "Running baseline 1 at $executionStartTime"
 
 start_data_collection "$baseline_run1"
+
+curl localhost:9411/zipkin > /dev/null 2>&1 &
 
 sleep $RUN_DURATION
 
