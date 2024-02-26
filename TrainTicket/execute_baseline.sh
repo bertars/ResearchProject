@@ -8,14 +8,13 @@ LOGS_EXTRACTION_TIMEOUT=10
 start_data_collection() {
     echo "Starting data collection for baseline at $(date "+%T.%6N")"
     # Start Scaphandre for power monitoring
-    docker run -d --name scaphandre_1 \
-        -v /sys/class/powercap:/sys/class/powercap \
-        -v /proc:/proc \
-        --privileged -ti hubblo/scaphandre json --containers -f "logs/scaphandre_1.log" &
+    # docker run -d --name scaphandre_1 \
+    #     -v /sys/class/powercap:/sys/class/powercap \
+    #     -v /proc:/proc \
+    #     -v /var/run/docker.sock:/var/run/docker.sock \
+    #     --privileged -ti hubblo/scaphandre json -t $RUN_DURATION >> "logs/scaphandre_1.log" 
+    docker run --name scaphandre_1 -v /sys/class/powercap:/sys/class/powercap -v /proc:/proc -v /var/run/docker.sock:/var/run/docker.sock --privileged -ti hubblo/scaphandre json -t $RUN_DURATION --containers >> "logs/scaphandre_1.json" 
     
-    # Start WattsUpPro monitoring
-    echo python3 ../wattsuppro_logger/WattsupPro.py -l -o gl3.log -p /dev/ttyUSB1 > /dev/null 2>&1 &
-
     
 }
 
@@ -23,16 +22,15 @@ stop_data_collection() {
     echo "Stopping data collection at $(date "+%T.%6N")"
     docker stop scaphandre_1
     docker rm scaphandre_1
-    pkill -f ../wattsuppro_logger-main/WattsupPro.py
 }
 
 mkdir -p logs
 
 echo "Starting Docker environment with Zipkin configurations and microservices at $(date "+%T.%6N")"
-docker-compose -f deployment/baseline/docker-compose-baseline.yml --env-file .env up -d
+docker compose -f deployment/baseline/docker-compose-baseline.yml --env-file .env up -d
 
-echo "Waiting for services to start"
-sleep $CONTAINER_START_TIMEOUT
+# echo "Waiting for services to start"
+# sleep $CONTAINER_START_TIMEOUT
 echo "Services started!"
 
 executionStartTime=$(date "+%T.%6N")
@@ -40,8 +38,9 @@ echo "Running baseline 1 at $executionStartTime"
 
 start_data_collection "$baseline_run1"
 
-curl localhost:9411/zipkin > /dev/null 2>&1 &
+curl localhost:8080 > /dev/null 2>&1 &
 
+echo "Sleeping..."
 sleep $RUN_DURATION
 
 stop_data_collection
@@ -51,7 +50,7 @@ echo "Stopped baseline at $executionStopTime"
 echo "baseline, run1, $executionStartTime, $executionStopTime" >> logs/baseline_log_1.csv
 
 echo "Stopping services"
-docker-compose -f deployment/baseline/docker-compose-baseline.yml --env-file .env down
+docker compose -f deployment/baseline/docker-compose-baseline.yml --env-file .env down
 
 echo "Cooling down at $(date "+%T.%6N")"
 sleep $COOLDOWN_PERIOD
